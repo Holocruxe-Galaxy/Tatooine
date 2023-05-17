@@ -1,5 +1,5 @@
 import tensorflow as tf
-
+from datos import *
 
 
 #lista de gustos
@@ -47,14 +47,78 @@ gustos_comidas = [
 'tamal en cazuela',
 ]
 
+gustos_musicales = [
+    'rock',
+    'pop',
+    'hip hop',
+    'electrónica',
+    'reggaetón',
+    'jazz',
+    'blues',
+    'metal',
+    'folklore',
+    'cumbia',
+    'tango',
+    'clásica',
+    'reggae',
+    'salsa',
+    'country',
+    'punk',
+    'indie',
+    'rap',
+    'trap',
+]
+
+gustos_deportivos = [
+    'fútbol',
+    'tenis',
+    'rugby',
+    'basquet',
+    'voley',
+    'automovilismo',
+    'hockey',
+    'boxeo',
+    'atletismo',
+    'handball',
+    'natación',
+    'ciclismo',
+    'golf',
+    'patinaje',
+    'surf',
+    'esquí',
+    'paddle',
+    'karate',
+]
+
+gustos_generales = [
+    'viajar',
+    'ver películas',
+    'leer',
+    'escuchar música',
+    'deportes',
+    'comer',
+    'bailar',
+    'salir con amigos',
+    'jugar videojuegos',
+    'pintar',
+    'escribir',
+    'ir de compras',
+    'acampar',
+    'hacer manualidades',
+    'cantar',
+    'tocar un instrumento',
+    'jardinería',
+    'meditar',
+]
+
 #diccionario de respuestas
-respuestas = {
+respuestas_comidas = {
     'gusto': 'Te recomiendo comer {} en Argentina. ¡Es lo más rico!',
     'nogusto': 'No estoy seguro de qué recomendarte comer en Argentina.'
 }
 
 #Recomendaciones
-Recomendaciones = {
+Recomendaciones_comidas = {
 "carnes" : ['asado', 'milanesa', 'choripán', 'churrasco', 'bondiola', 'parrillada', 'matambre', 'pollo al disco', 'carbonada', 'bife de chorizo'],
 
 "pastas" : ['Ñoquis', 'tarta', 'ravioles', 'fideos con tuco', 'gnocchi'],
@@ -66,7 +130,7 @@ Recomendaciones = {
 }
 
 
-def hacer_recomendaciones(gustos_comidas, respuestas, Recomendaciones):
+def hacer_recomendaciones(gustos_comidas, respuestas_comidas, Recomendaciones_comidas):
     # Creación de los datos de entrenamiento
     entradas = tf.convert_to_tensor([[i+1] for i in range(len(gustos_comidas))])
     etiquetas = tf.convert_to_tensor([1 if i % 2 == 0 else 0 for i in range(len(gustos_comidas))])
@@ -89,17 +153,20 @@ def hacer_recomendaciones(gustos_comidas, respuestas, Recomendaciones):
     recomendacion_comida = input("¿Que le gustaria comer hoy? (carnes, pastas, rápida, otros): ")
 
     # Verificación de la estación y ajuste de la predicción
-    if recomendacion_comida in Recomendaciones:
-        lugares_estacion = Recomendaciones[recomendacion_comida]
+    if recomendacion_comida in Recomendaciones_comidas:
+        lugares_estacion = Recomendaciones_comidas[recomendacion_comida]
         entradas_estacion = tf.convert_to_tensor([[gustos_comidas.index(comida)+1] for comida in lugares_estacion])
         prediccion = modelo.predict(entradas_estacion)
         indice_lugar = tf.argmax(prediccion, axis=1).numpy()[0]
-        respuesta = respuestas['gusto'].format(lugares_estacion[indice_lugar])
+        respuesta = respuestas_comidas['gusto'].format(lugares_estacion[indice_lugar])
     else:
-        respuesta = respuestas['nogusto']
+        respuesta = respuestas_comidas['nogusto']
 
     return respuesta
 
 
-recomendacion = hacer_recomendaciones(gustos_comidas, respuestas, Recomendaciones)
+recomendacion = hacer_recomendaciones(gustos_comidas, respuestas_comidas, Recomendaciones_comidas)
 print(recomendacion)
+
+
+
