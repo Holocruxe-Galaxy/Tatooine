@@ -2,6 +2,12 @@ import openai
 import os
 from datos import *
 
+# pregunta1 = input()
+
+# if "gusto" "gustar" in pregunta1:
+#     print "hola"
+# else:
+
 # Configure la clave de la API de OpenAI
 openai.api_key = "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"
 
