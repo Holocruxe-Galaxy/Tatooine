@@ -1,13 +1,17 @@
 import tensorflow as tf
 import pandas as pd
 import ipywidgets as widgets
+from IPython.display import display
 
 # Creamos un DataFrame vacío con las columnas necesarias
-df = pd.DataFrame(columns=['Día', 'Comida', 'Plato Principal', 'Acompañamiento', 'Bebida'])
+df = pd.DataFrame(
+    columns=['Día', 'Comida', 'Plato Principal', 'Acompañamiento', 'Bebida'])
 
 # Creamos las opciones para cada variable
-dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
-comidas = ['Hamburguesa', 'Pollo asado', 'Pasta', 'Sopa de verduras', 'Pizza', 'Asado']
+dias = ['Lunes', 'Martes', 'Miércoles',
+        'Jueves', 'Viernes', 'Sábado', 'Domingo']
+comidas = ['Hamburguesa', 'Pollo asado', 'Pasta',
+           'Sopa de verduras', 'Pizza', 'Asado']
 platos_principales = ['Carne', 'Pollo', 'Pasta', 'Verduras', 'Pizza']
 acompañamientos = ['Papas fritas', 'Ensalada', 'Pan', 'Crutones', 'Frutas', 'Papas']
 bebidas = ['Agua', 'Refresco']
@@ -15,7 +19,8 @@ bebidas = ['Agua', 'Refresco']
 # Creamos los widgets para cada variable
 dia_widget = widgets.Dropdown(options=dias, description='Día:')
 comida_widget = widgets.Dropdown(options=comidas, description='Comida:')
-plato_principal_widget = widgets.Dropdown(options=platos_principales, description='Plato Principal:')
+plato_principal_widget = widgets.Dropdown(
+    options=platos_principales, description='Plato Principal:')
 acompañamiento_widget = widgets.Dropdown(options=acompañamientos, description='Acompañamiento:')
 bebida_widget = widgets.Dropdown(options=bebidas, description='Bebida:')
 
@@ -38,12 +43,12 @@ nuevo_dato = {
     'Día': dia,
     'Comida': comida,
     'Plato Principal': plato_principal,
-    'Acompañamiento' : acompañamiento,
-    'Bebida' : bebida,
+    'Acompañamiento': acompañamiento,
+    'Bebida': bebida,
 }
 
 # Agregamos el nuevo dato al DataFrame
-df = df.append(nuevo_dato, ignore_index=True)
+df = df._append(nuevo_dato, ignore_index=True)
 
 # Mostramos el DataFrame actualizado
 print(df)
@@ -64,10 +69,10 @@ train_labels = train_data['Comida']
 test_features = test_data.drop(columns=['Comida'])
 test_labels = test_data['Comida']
 
-print(train_features,"Aca 1")
-print(train_labels,"Aca 2")
-print(test_features,"Aca 3")
-print(test_labels,"Aca 4")
+print(train_features, "Aca 1")
+print(train_labels, "Aca 2")
+print(test_features, "Aca 3")
+print(test_labels, "Aca 4")
 
 # Creamos un modelo secuencial de TensorFlow
 model = tf.keras.Sequential([
@@ -92,11 +97,10 @@ try:
     # Evaluamos el modelo con el conjunto de prueba
     test_loss, test_acc = model.evaluate(test_features, test_labels, verbose=2)
     print('\nTest accuracy:', test_acc)
-    
+
 except ValueError as e:
     print("Error de entrada del modelo:", e)
     # Manejar el error de entrada del modelo de manera adecuada
 except Exception as e:
     print("Ocurrió un error inesperado durante el entrenamiento del modelo:", e)
     # Manejar cualquier otro error de manera adecuada
-
