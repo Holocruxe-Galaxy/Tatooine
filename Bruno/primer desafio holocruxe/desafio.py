@@ -1,16 +1,17 @@
-# import openai
-# import os
-# from datos import *
+import openai
+import os
+from datos import *
 
-# ask a question
-tema_comida = ["comida","comidas","comer"]
+#crear un input donde pregunte que necesito
 
-pregunta = input("Dime")
+def pregunta():
+     print("¿Qué necesitas?")
+     pregunta = input()
+     return pregunta
 
-if pregunta.lower() in tema_comida:
-    print("me gusta el queso")
-else:
-    print("no entiendo la pregunta.")
+
+
+#if pregunta.__contains__('comida'):
 
 
 
