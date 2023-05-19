@@ -20,6 +20,7 @@ class ComidaListView(ListView):
         context['predecir_comida'] = predecir_comida()
         return context
 
+# MODIFICAR ESTO PARA QUE REALMENTE PREDIGA LA COMIDA
 
 def predecir_comida():
     return 'hola'
