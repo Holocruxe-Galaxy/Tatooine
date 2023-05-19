@@ -1,0 +1,8 @@
+<h1>{{ predecir_comida }}</h1>
+{% for comida in comidas %}
+    {% comment %} mostrar function predecir_comida {% endcomment %}
+    <p>
+        {{ comida.nombre }}
+        <input type="number" name="puntaje" value="{{ comida.puntaje }}">
+    </p>
+{% endfor %}
