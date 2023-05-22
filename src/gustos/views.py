@@ -20,11 +20,6 @@ class ComidaListView(ListView):
         context['predecir_comida'] = predecir_comida()
         return context
 
-# MODIFICAR ESTO PARA QUE REALMENTE PREDIGA LA COMIDA
-
-def predecir_comida():
-    return 'hola'
-
 
 class ComidaCreateView(CreateView):
     model = Comida
@@ -46,4 +41,8 @@ class ComidaDeleteView(DeleteView):
     success_url = reverse_lazy('comida_list')
 
 
-# #funcion para predecir la comida que elegiria el usario segun sus gustos por puntaje del 1 al 10 con 10 siendo el mas alto
+# Funcion para predecir la comida que elegiria el usario segun sus gustos por puntaje del 1 al 10 con 10 siendo el mas alto
+
+def predecir_comida():
+  return "esto no funciona"
+
