@@ -1,1 +1,14 @@
-html
+<h1>Elije un día de la semana y un tipo de comida:</h1>
+<form method="post">
+    {% csrf_token %}
+    <select name="tipo_comida">
+        {% for tipo_comida in tipos_comida %}
+            <option value="{{ tipo_comida.id }}">{{ tipo_comida.nombre }}</option>
+        {% endfor %}
+    </select>
+    <select name="dia_semana">
+        {% for dia_semana in dias_semana %}<option value="{{ dia_semana }}">{{ dia_semana }}</option>{% endfor %}
+    </select>
+    <input type="submit" value="Aceptar">
+    <h2>{{ resultado }}</h2>
+</form>
