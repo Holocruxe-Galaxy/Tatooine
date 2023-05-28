@@ -9,16 +9,14 @@ import numpy as np
 import pandas as pd
 
 
+class HomeView(TemplateView):
+    template_name = 'home.html'
+
+
 class ComidaListView(ListView):
     model = Comida
     template_name = 'comida_list.html'
     context_object_name = 'comidas'
-    # mostrar predecir_comida en el template
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['predecir_comida'] = predecir_comida()
-        return context
 
 
 class ComidaCreateView(CreateView):
@@ -44,5 +42,4 @@ class ComidaDeleteView(DeleteView):
 # Funcion para predecir la comida que elegiria el usario segun sus gustos por puntaje del 1 al 10 con 10 siendo el mas alto
 
 def predecir_comida():
-  return "esto no funciona"
-
+    return "esto no funciona"

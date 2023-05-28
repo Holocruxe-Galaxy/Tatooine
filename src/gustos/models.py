@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# El modelo usuario sera movido a la app usuarios en el futuro
 
 
 class User(models.Model):
@@ -12,6 +12,8 @@ class User(models.Model):
 
     def __str__(self):
         return self.nombre
+
+# Comidas y tipos de comidas (desayuno, almuerzo, cena, etc)
 
 
 class Tipo_Comida(models.Model):
