@@ -64,6 +64,7 @@ def recomendar_comida(dia_semana, tipo_comida):
     connection = sqlite3.connect("db.sqlite3")
     dataframe = pd.read_sql_query(
         "SELECT * FROM gustos_comida", connection)
+    connection.close()
     # remove id column
     dataframe = dataframe.drop(['id'], axis=1)
     # convert the values from the column fecha to week day
@@ -85,7 +86,8 @@ def recomendar_comida(dia_semana, tipo_comida):
     # Compile the model
     modelo.compile(optimizer='adam',
                    loss='mean_squared_error')
-
+    print(x_train)
+    print(y_train)
     # Train the model
     modelo.fit(x_train, y_train, epochs=10)
 
