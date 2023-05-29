@@ -212,17 +212,17 @@ def insertar_comidas_if_empty():
     conn.close()
 
 
-def debug():
-    # print id de los tipos de comida insertados
-    print("Tipos de comida insertados:")
-    conn = sqlite3.connect("db.sqlite3")
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM gustos_tipo_comida")
-    for row in cursor.fetchall():
-        print(row)
-    conn.close()
+# def debug():
+#     # print id de los tipos de comida insertados
+#     print("Tipos de comida insertados:")
+#     conn = sqlite3.connect("db.sqlite3")
+#     cursor = conn.cursor()
+#     cursor.execute("SELECT * FROM gustos_tipo_comida")
+#     for row in cursor.fetchall():
+#         print(row)
+#     conn.close()
 
 
 insertar_tipos_comida_if_empty()
 insertar_comidas_if_empty()
-debug()
+# debug()

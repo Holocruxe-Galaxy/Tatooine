@@ -23,43 +23,16 @@ class HomeView(TemplateView):
 
     def post(self, request, *args, **kwargs):
         context = self.get_context_data()
-        dia_semana = request.POST.get('dia_semana')
-        tipo_comida = request.POST.get('tipo_comida')
-        context['comidas'] = recomendar_comida(dia_semana, tipo_comida)
+        dia_semana = request.POST.get('dia_semana')  # int
+        tipo_comida = request.POST.get('tipo_comida')  # int
+        context['comida'] = recomendar_comida(dia_semana, tipo_comida)
         return self.render_to_response(context)
-
-
-class ComidaListView(ListView):
-    model = Comida
-    template_name = 'comida_list.html'
-    context_object_name = 'comidas'
-
-
-class ComidaCreateView(CreateView):
-    model = Comida
-    template_name = 'comida_create.html'
-    fields = '__all__'
-    success_url = reverse_lazy('comida_list')
-
-
-class ComidaUpdateView(UpdateView):
-    model = Comida
-    template_name = 'comida_update.html'
-    fields = '__all__'
-    success_url = reverse_lazy('comida_list')
-
-
-class ComidaDeleteView(DeleteView):
-    model = Comida
-    template_name = 'comida_delete.html'
-    success_url = reverse_lazy('comida_list')
-
 
 # Funcion para predecir la comida que elegiria el usario segun sus gustos por puntaje del 1 al 10 con 10 siendo el mas alto
 
+
 def recomendar_comida(dia_semana, tipo_comida):
-    if (dia_semana == None or tipo_comida == None):
-        return ""
+
     # create the dataframe from db.sqlite3 database using pd.read_sql_query
     connection = sqlite3.connect("db.sqlite3")
     dataframe = pd.read_sql_query(
@@ -86,16 +59,16 @@ def recomendar_comida(dia_semana, tipo_comida):
     # Compile the model
     modelo.compile(optimizer='adam',
                    loss='mean_squared_error')
-    print(x_train)
-    print(y_train)
+
     # Train the model
     modelo.fit(x_train, y_train, epochs=10)
 
     # Prediction
+    dia_semana = int(dia_semana)
     comida = modelo.predict([dia_semana])
     comida = nombres[int(comida[0][0])]
-    return comida
 
+    return comida
 
 def recomendar_comida_gpt(comida):
     # Generar recomendación utilizando GPT-3

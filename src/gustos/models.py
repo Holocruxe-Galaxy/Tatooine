@@ -15,7 +15,6 @@ class User(models.Model):
 
 # Comidas y tipos de comidas (desayuno, almuerzo, cena, etc)
 
-
 class Tipo_Comida(models.Model):
     nombre = models.CharField(max_length=100)
 

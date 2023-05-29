@@ -23,8 +23,8 @@ estaciones = {
 }
 
 # Creación de los datos de entrenamiento
-entradas = tf.convert_to_tensor([[i+1] for i in range(len(lugares))])
-etiquetas = tf.convert_to_tensor([1 if i % 2 == 0 else 0 for i in range(len(lugares))])
+entradas = tf.convert_to_tensor([[i+1] for i in range(len(lugares))]) 
+etiquetas = tf.convert_to_tensor([1 if i % 2 == 0 else 0 for i in range(len(lugares))]) 
 
 # Definición del modelo
 modelo = tf.keras.Sequential([
