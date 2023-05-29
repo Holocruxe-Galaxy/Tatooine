@@ -24,7 +24,7 @@ class Tipo_Comida(models.Model):
 
 
 class Comida(models.Model):
-    fecha = models.DateField()
+    fecha = models.DateField() 
     nombre = models.CharField(max_length=100)
     tipo = models.ForeignKey(Tipo_Comida, on_delete=models.CASCADE)
 

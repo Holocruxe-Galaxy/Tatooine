@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 import tensorflow as tf
 import numpy as np
 import pandas as pd
+from django.utils.dateformat import format
 
 
 class HomeView(TemplateView):
@@ -16,14 +17,11 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['tipos_comida'] = Tipo_Comida.objects.all()
-        context['dias_semana'] = ['Lunes', 'Martes', 'Miercoles',
-                                  'Jueves', 'Viernes', 'Sabado', 'Domingo']
-        dia_semana = self.request.POST.get('dia_semana')
-        tipo_comida = self.request.POST.get('tipo_comida')
-        context['resultado'] = predecir_comida(dia_semana, tipo_comida)
+        context['dias_semana'] = [
+            (str(i), format(i, 'l')) for i in range(7)
+        ]
         return context
 
-    ##########WTF################
     def post(self, request, *args, **kwargs):
         context = self.get_context_data()
         dia_semana = request.POST.get('dia_semana')
@@ -60,8 +58,9 @@ class ComidaDeleteView(DeleteView):
 
 # Funcion para predecir la comida que elegiria el usario segun sus gustos por puntaje del 1 al 10 con 10 siendo el mas alto
 
-def predecir_comida(dia, tipo_comida):
-    if (dia != None and tipo_comida != None):
-        return "comida"
+def predecir_comida(dia_semana, tipo_comida):
+    if (dia_semana != None and tipo_comida != None):
+
+        return dia_semana
     else:
-        return "asd"
+        return ""
