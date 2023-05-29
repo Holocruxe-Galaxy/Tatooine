@@ -23,6 +23,14 @@ class HomeView(TemplateView):
         context['resultado'] = predecir_comida(dia_semana, tipo_comida)
         return context
 
+    ##########WTF################
+    def post(self, request, *args, **kwargs):
+        context = self.get_context_data()
+        dia_semana = request.POST.get('dia_semana')
+        tipo_comida = request.POST.get('tipo_comida')
+        context['resultado'] = predecir_comida(dia_semana, tipo_comida)
+        return self.render_to_response(context)
+
 
 class ComidaListView(ListView):
     model = Comida
@@ -56,4 +64,4 @@ def predecir_comida(dia, tipo_comida):
     if (dia != None and tipo_comida != None):
         return "comida"
     else:
-        return ""
+        return "asd"
