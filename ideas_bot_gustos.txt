@@ -1,0 +1,46 @@
+preguntas sobre gustos culinarios básicos:
+
+1. ¿Qué comiste hoy para el desayuno?
+2. ¿Cuál es tu comida favorita?
+3. ¿Te gusta más cocinar en casa o comer fuera?
+4. ¿Qué es lo que más te gusta cocinar?
+5. ¿Cuál es tu postre favorito?
+6. ¿Prefieres la comida picante o suave?
+7. ¿Cuál es tu plato típico de tu país favorito?
+8. ¿Has probado alguna comida exótica? ¿Cuál?
+9. ¿Tienes alguna alergia alimentaria?
+10. ¿Prefieres los sabores dulces o salados?
+11. ¿Cuál es tu tipo de cocina favorito (italiana, mexicana, asiática, etc.)?
+12. ¿Cuál es tu snack favorito?
+13. ¿Te gusta experimentar con nuevos ingredientes al cocinar?
+14. ¿Cuál es tu bebida favorita?
+15. ¿Qué ingredientes no pueden faltar en tu despensa?
+16. ¿Tienes alguna comida o ingrediente que no soportes?
+17. ¿Cuál es tu restaurante favorito?
+18. ¿Qué te gustaría comer en una ocasión especial?
+19. ¿Qué comida te reconforta cuando estás triste o enfermo?
+20. ¿Cuál es tu receta casera más exitosa?
+
+
+ejemplos de funcionalidades que podrías implementar en un bot para ver gustos culinarios:
+
+1. Recomendar recetas basadas en los ingredientes disponibles en la despensa.
+2. Proporcionar recetas personalizadas según las preferencias alimenticias del usuario (vegetariano, vegano, sin gluten, etc.).
+3. Sugerir maridajes de vinos o bebidas para acompañar diferentes platos.
+4. Brindar información nutricional de los alimentos y recetas consultadas.
+5. Ofrecer opciones de menús equilibrados para diferentes dietas (adelgazar, ganar masa muscular, etc.).
+6. Dar consejos para mejorar las habilidades culinarias y técnicas de cocina.
+7. Recomendar restaurantes cercanos que se adapten a los gustos del usuario.
+8. Crear una lista de la compra basada en las recetas seleccionadas.
+9. Permitir guardar recetas favoritas y crear colecciones personalizadas.
+10. Ofrecer alternativas y sustituciones de ingredientes en las recetas.
+11. Proporcionar información sobre la temporada y disponibilidad de diferentes ingredientes.
+12. Presentar recetas populares o tendencias culinarias actuales.
+13. Enviar recordatorios de eventos o fechas especiales relacionados con la gastronomía.
+14. Realizar recomendaciones de utensilios y gadgets de cocina.
+15. Compartir consejos para evitar desperdicio de alimentos.
+16. Ofrecer información sobre la historia y origen de platos tradicionales.
+17. Proporcionar sugerencias de comidas para ocasiones especiales (cenas románticas, cenas familiares, etc.).
+18. Presentar recetas rápidas y fáciles de preparar para momentos de poco tiempo.
+19. Dar tips sobre cómo organizar la despensa y la cocina de manera eficiente.
+20. Permitir interactuar con otros usuarios, compartir experiencias y recomendar recetas.
