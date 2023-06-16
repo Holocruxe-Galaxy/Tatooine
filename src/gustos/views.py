@@ -25,7 +25,7 @@ class HomeView(TemplateView):
         context = self.get_context_data()
         dia_semana = request.POST.get('dia_semana')  # int
         tipo_comida = request.POST.get('tipo_comida')  # int
-        context['comida'] = recomendar_comida(dia_semana, tipo_comida)
+        context['comidas'] = recomendar_comida(dia_semana, tipo_comida)
         return self.render_to_response(context)
 
 # Funcion para predecir la comida que elegiria el usario segun sus gustos por puntaje del 1 al 10 con 10 siendo el mas alto
@@ -68,7 +68,7 @@ def recomendar_comida(dia_semana, tipo_comida):
     comida = modelo.predict([dia_semana])
     comida = nombres[int(comida[0][0])]
 
-    return comida
+    return y_train.values.tolist()
 
 def recomendar_comida_gpt(comida):
     # Generar recomendación utilizando GPT-3

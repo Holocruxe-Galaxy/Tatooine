@@ -16,5 +16,12 @@
         <option value=6>Domingo</option>
     </select>
     <input type="submit" value="Aceptar">
-    <p>{{ comida }}</p>
+    {% comment %} <p>{{ comida }}</p> {% endcomment %}
+    <li>
+        {% for comida in comidas %}
+            <ul>
+                {{ comida }}
+            </ul>
+        {% endfor %}
+    </li>
 </form>
