@@ -44,3 +44,10 @@ ejemplos de funcionalidades que podrías implementar en un bot para ver gustos c
 18. Presentar recetas rápidas y fáciles de preparar para momentos de poco tiempo.
 19. Dar tips sobre cómo organizar la despensa y la cocina de manera eficiente.
 20. Permitir interactuar con otros usuarios, compartir experiencias y recomendar recetas.
+
+------------
+Funcionalidad básica
+
+Recomendar recetas basadas en la prediccion de proxima comida del usuario (integracion con chatgpt)
+Brindar información nutricional de los alimentos y recetas consultadas. (integracion con chatgpt)
+Recomendar restaurantes cercanos que se adapten a los gustos del usuario. (integracion con maps)
