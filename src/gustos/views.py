@@ -71,9 +71,35 @@ def recomendar_comida(dia_semana, tipo_comida):
 
     return y_train.values.tolist()
 
-def recomendar_comida_gpt(comida):
-    # Generar recomendación utilizando GPT-3
-    prompt = f"Comida: {comida}\n Recomendación:"
+
+def recomendar_receta_gpt(comida):
+    # Generate a prompt for the GPT-3 model based on the user's input and return a recipe recommendation
+    prompt = f"receta para preparar {comida}\nformato:\ningredientes:\npreparacion:\n"
+
+    # Initialize the OpenAI API with your credentials
+    openai.api_key = 'YOUR_API_KEY'  # Replace 'YOUR_API_KEY' with your actual API key
+
+    response = openai.Completion.create(
+        engine='text-davinci-003',
+        prompt=prompt,
+        max_tokens=50,
+        n=1,
+        stop=None,
+        temperature=0.7
+    )
+
+    recomendacion = response.choices[0].text.strip()
+
+    return recomendacion
+
+
+def mostrar_valor_nutricional_gpt(comida):
+    # Generate a prompt for the GPT-3 model based on the user's input and return a recipe recommendation
+    prompt = f"valor nutricional general de {comida}\n"
+
+    # Initialize the OpenAI API with your credentials
+    openai.api_key = 'YOUR_API_KEY'  # Replace 'YOUR_API_KEY' with your actual API key
+
     response = openai.Completion.create(
         engine='text-davinci-003',
         prompt=prompt,
