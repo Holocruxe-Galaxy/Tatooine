@@ -12,6 +12,7 @@ from django.utils.dateformat import format
 import sqlite3
 import openai
 
+from .forms import ComidaForm
 
 class HomeView(TemplateView):
     template_name = 'home.html'
@@ -85,3 +86,24 @@ def recomendar_comida_gpt(comida):
     recomendacion = response.choices[0].text.strip()
 
     return recomendacion
+
+
+
+def preguntas_comida(request):
+    if request.method == 'POST':
+        form = ComidaForm(request.POST)
+        if form.is_valid():
+            # Aquí puedes realizar acciones con los datos enviados
+            desayuno = form.cleaned_data['desayuno']
+            almuerzo = form.cleaned_data['almuerzo']
+            cena = form.cleaned_data['cena']
+            postre = form.cleaned_data['postre']
+            snack = form.cleaned_data['snack']
+
+
+            # Por ahora, solo mostraremos un mensaje de éxito
+            return render(request, 'exito.html')
+    else:
+        form = ComidaForm()
+
+    return render(request, 'Crear_Tipo_Comida.html', {'form': form})
