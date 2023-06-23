@@ -12,7 +12,7 @@ from django.utils.dateformat import format
 import sqlite3
 import openai
 
-from .forms import ComidaForm
+from .forms import ComidaForm, AgregarComidaForm
 
 class HomeView(TemplateView):
     template_name = 'home.html'
@@ -133,3 +133,15 @@ def preguntas_comida(request):
         form = ComidaForm()
 
     return render(request, 'Crear_Tipo_Comida.html', {'form': form})
+
+
+def agregar_comida(request):
+    if request.method == 'POST':
+        form = ComidaForm(request.POST)
+        if form.is_valid():
+            form.save()  # Guardar la comida en la base de datos
+            return render(request, 'exito2.html')
+    else:
+        form = ComidaForm()
+
+    return render(request, 'agregar_comida.html', {'form': form})
