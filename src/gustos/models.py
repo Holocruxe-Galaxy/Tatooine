@@ -1,10 +1,5 @@
 from django.db import models
 
-
-
-
-
-
 class tipo_comida(models.Model):
     id_tipo_comida = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
@@ -16,7 +11,6 @@ class comida(models.Model):
     id_comida = models.AutoField(primary_key=True)
     tipo = models.ForeignKey(tipo_comida, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
-    comidacol = models.CharField(max_length=100)
 
     def __str__(self):
         return self.nombre
