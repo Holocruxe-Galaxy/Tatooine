@@ -24,8 +24,8 @@ class usuario(models.Model):
     
 class usuario_comida(models.Model):
     id_usuario_comida = models.AutoField(primary_key=True)
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
-    comida = models.ForeignKey(comida, on_delete=models.CASCADE)
+    id_usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    id_comida = models.ForeignKey(comida, on_delete=models.CASCADE)
     fecha = models.DateField()
 
     def __str__(self):
