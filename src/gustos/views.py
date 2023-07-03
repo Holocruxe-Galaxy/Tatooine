@@ -14,6 +14,7 @@ import openai
 
 from .forms import ComidaForm
 
+
 class HomeView(TemplateView):
     template_name = 'home.html'
 
@@ -26,50 +27,62 @@ class HomeView(TemplateView):
         context = self.get_context_data()
         dia_semana = request.POST.get('dia_semana')  # int
         tipo_comida = request.POST.get('tipo_comida')  # int
-        context['comidas'] = recomendar_comida(dia_semana, tipo_comida)
+        context['comidas'] = predecir_comida(dia_semana, tipo_comida)
         return self.render_to_response(context)
 
-# Funcion para predecir la comida que elegiria el usario segun sus gustos por puntaje del 1 al 10 con 10 siendo el mas alto
+# CREAR funcion de entrenamiento inicial del modelo
 
 
-def recomendar_comida(dia_semana, tipo_comida):
+def entrenamiento_inicial():
+    pass
 
-    # create the dataframe from db.sqlite3 database using pd.read_sql_query
-    connection = sqlite3.connect("db.sqlite3")
-    dataframe = pd.read_sql_query(
-        "SELECT * FROM gustos_comida", connection)
-    connection.close()
-    # remove id column
-    dataframe = dataframe.drop(['id'], axis=1)
-    # convert the values from the column fecha to week day
-    dataframe['fecha'] = pd.to_datetime(dataframe['fecha'])
-    dataframe['fecha'] = dataframe['fecha'].dt.day_of_week
-    # index data from column nombre so its numeric
-    nombres = dataframe['nombre'].unique()
-    index_nombre = {value: index for index, value in enumerate(nombres)}
-    dataframe['nombre'] = dataframe['nombre'].apply(lambda x: index_nombre[x])
+# CREAR funcion de entrenamiento del modelo
 
-    # Create training data
-    x_train = dataframe[['fecha']]
-    y_train = dataframe[['nombre']]
 
-    # Create the model
-    modelo = tf.keras.Sequential()
-    modelo.add(tf.keras.layers.Dense(units=1, input_shape=[1]))
+def entrenar_modelo():
+    pass
 
-    # Compile the model
-    modelo.compile(optimizer='adam',
-                   loss='mean_squared_error')
+# MODIFCIAR: Esta funcion debe devolver una lista de comidas que el usuario podria elegir para el dia.
 
-    # Train the model
-    modelo.fit(x_train, y_train, epochs=10)
 
-    # Prediction
-    dia_semana = int(dia_semana)
-    comida = modelo.predict([dia_semana])
-    comida = nombres[int(comida[0][0])]
+def predecir_comida():
+    pass
+    # # create the dataframe from db.sqlite3 database using pd.read_sql_query
+    # connection = sqlite3.connect("db.sqlite3")
+    # dataframe = pd.read_sql_query(
+    #     "SELECT * FROM gustos_comida", connection)
+    # connection.close()
+    # # remove id column
+    # dataframe = dataframe.drop(['id'], axis=1)
+    # # convert the values from the column fecha to week day
+    # dataframe['fecha'] = pd.to_datetime(dataframe['fecha'])
+    # dataframe['fecha'] = dataframe['fecha'].dt.day_of_week
+    # # index data from column nombre so its numeric
+    # nombres = dataframe['nombre'].unique()
+    # index_nombre = {value: index for index, value in enumerate(nombres)}
+    # dataframe['nombre'] = dataframe['nombre'].apply(lambda x: index_nombre[x])
 
-    return y_train.values.tolist()
+    # # Create training data
+    # x_train = dataframe[['fecha']]
+    # y_train = dataframe[['nombre']]
+
+    # # Create the model
+    # modelo = tf.keras.Sequential()
+    # modelo.add(tf.keras.layers.Dense(units=1, input_shape=[1]))
+
+    # # Compile the model
+    # modelo.compile(optimizer='adam',
+    #                loss='mean_squared_error')
+
+    # # Train the model
+    # modelo.fit(x_train, y_train, epochs=10)
+
+    # # Prediction
+    # dia_semana = int(dia_semana)
+    # comida = modelo.predict([dia_semana])
+    # comida = nombres[int(comida[0][0])]
+
+    # return y_train.values.tolist()
 
 
 def recomendar_receta_gpt(comida):
@@ -112,24 +125,3 @@ def mostrar_valor_nutricional_gpt(comida):
     recomendacion = response.choices[0].text.strip()
 
     return recomendacion
-
-
-
-def preguntas_comida(request):
-    if request.method == 'POST':
-        form = ComidaForm(request.POST)
-        if form.is_valid():
-            # Aquí puedes realizar acciones con los datos enviados
-            desayuno = form.cleaned_data['desayuno']
-            almuerzo = form.cleaned_data['almuerzo']
-            cena = form.cleaned_data['cena']
-            postre = form.cleaned_data['postre']
-            snack = form.cleaned_data['snack']
-
-
-            # Por ahora, solo mostraremos un mensaje de éxito
-            return render(request, 'exito.html')
-    else:
-        form = ComidaForm()
-
-    return render(request, 'Crear_Tipo_Comida.html', {'form': form})
