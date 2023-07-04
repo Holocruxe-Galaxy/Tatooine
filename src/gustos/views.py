@@ -12,22 +12,6 @@ from django.utils.dateformat import format
 import sqlite3
 import openai
 
-
-class HomeView(TemplateView):
-    template_name = 'home.html'
-
-    # def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
-    #     context = super().get_context_data(**kwargs)
-    #     context['tipos_comida'] = Tipo_Comida.objects.all()
-    #     return context
-
-    # def post(self, request, *args, **kwargs):
-    #     context = self.get_context_data()
-    #     dia_semana = request.POST.get('dia_semana')  # int
-    #     tipo_comida = request.POST.get('tipo_comida')  # int
-    #     context['comidas'] = predict(dia_semana, tipo_comida)
-    #     return self.render_to_response(context)
-
 # Get the dataframe from the database
 
 
@@ -48,7 +32,7 @@ def format(dataframe):
     # convert the values from the column date to week day
     dataframe['date'] = pd.to_datetime(dataframe['date'])
     dataframe['date'] = dataframe['date'].dt.day_of_week
-    # index data from column nombre so its numeric
+    # index data from column name so its numeric
     names = dataframe['name'].unique()
     name_index = {value: index for index, value in enumerate(names)}
     dataframe['name'] = dataframe['name'].apply(lambda x: name_index[x])
@@ -58,34 +42,25 @@ def format(dataframe):
 
 
 def train(dataframe):
-    names = dataframe['name'].unique()
     # Create training data
-    x_train = dataframe[['fecha']]
-    y_train = dataframe[['nombre']]
+    x_train = dataframe[['date']]
+    y_train = dataframe[['name']]
+    z_train = dataframe[['meal_type']]
 
     # Create the model
-    modelo = tf.keras.Sequential()
-    modelo.add(tf.keras.layers.Dense(units=1, input_shape=[1]))
+    model = tf.keras.Sequential()
+    model.add(tf.keras.layers.Dense(units=1, input_shape=[1]))
 
     # Compile the model
-    modelo.compile(optimizer='adam',
-                   loss='mean_squared_error')
+    model.compile(optimizer='adam',
+                  loss='mean_squared_error')
 
     # Train the model
-    modelo.fit(x_train, y_train, epochs=10)
+    model.fit(x_train, y_train, z_train, epochs=10)
 
-    # Prediction
-    dia_semana = int(dia_semana)
-    comida = modelo.predict([dia_semana])
-    comida = names[int(comida[0][0])]
+    # Save the model
+    model.save('model.h5')
 
-    return y_train.values.tolist()
-
-# Predict the meal for a given day of the week and meal type
-
-
-def predict(date, meal_type):
-    pass
 
 # Recommend a recipe based on the predicted meal for the date and meal type
 
@@ -132,3 +107,15 @@ def nutritional_value_gpt(comida):
     recommenadtion = response.choices[0].text.strip()
 
     return recommenadtion
+
+
+class HomeView(TemplateView):
+    template_name = 'home.html'
+    # get the dataframe from the database
+    dataframe = get_dataframe()
+    # format the dataframe
+    dataframe = format(dataframe)
+    # train the model
+    train(dataframe)
+
+    
