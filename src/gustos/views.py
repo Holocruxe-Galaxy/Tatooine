@@ -111,11 +111,11 @@ def nutritional_value_gpt(comida):
 
 class HomeView(TemplateView):
     template_name = 'home.html'
-    # get the dataframe from the database
-    dataframe = get_dataframe()
-    # format the dataframe
-    dataframe = format(dataframe)
-    # train the model
-    train(dataframe)
+    # # get the dataframe from the database
+    # dataframe = get_dataframe()
+    # # format the dataframe
+    # dataframe = format(dataframe)
+    # # train the model
+    # train(dataframe)
 
     
