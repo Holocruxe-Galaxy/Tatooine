@@ -111,11 +111,62 @@ def nutritional_value_gpt(comida):
 
 class HomeView(TemplateView):
     template_name = 'home.html'
-    # get the dataframe from the database
-    dataframe = get_dataframe()
-    # format the dataframe
-    dataframe = format(dataframe)
-    # train the model
-    train(dataframe)
 
-    
+
+from django.db.models import Count
+from django.utils import timezone
+from random import randint
+from datetime import timedelta
+
+def add_synthetic_data():
+    if meal_type.objects.count() > 0:
+        return
+
+    # Crea los tipos de comida
+    meal_type.objects.create(name='Breakfast')
+    meal_type.objects.create(name='Lunch')
+    meal_type.objects.create(name='Dinner')
+
+    # Crea algunas comidas
+    meals = [
+        {'name': 'Toast', 'type': 'Breakfast'},
+        {'name': 'Salad', 'type': 'Lunch'},
+        {'name': 'Steak', 'type': 'Dinner'},
+        # Agrega más comidas aquí
+    ]
+
+    for meal_data in meals:
+        type_name = meal_data['type']
+        meal_type_obj = meal_type.objects.get(name=type_name)
+        meal.objects.create(name=meal_data['name'], type=meal_type_obj)
+
+    # Crea usuarios
+    users = [
+        {'name': 'John Doe'},
+        {'name': 'Jane Smith'},
+        {'name': 'David Johnson'},
+        # Agrega más usuarios aquí
+    ]
+
+    for user_data in users:
+        user.objects.create(name=user_data['name'])
+
+    # Crea comidas para usuarios en fechas aleatorias
+    num_users = user.objects.count()
+    num_meals = meal.objects.count()
+
+    for _ in range(10):  # Cambia este número según cuántos registros quieres crear
+        random_user = user.objects.order_by('?').first()
+        random_meal = meal.objects.order_by('?').first()
+        random_date = timezone.now() - timedelta(days=randint(1, 30))
+
+        user_meal.objects.create(id_user=random_user, id_meal=random_meal, date=random_date)
+
+add_synthetic_data()
+
+
+from django.shortcuts import redirect
+
+def generate_synthetic_data(request):
+    add_synthetic_data()
+    return redirect('home') 
