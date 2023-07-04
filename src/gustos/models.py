@@ -1,32 +1,36 @@
 from django.db import models
 
-class tipo_comida(models.Model):
-    id_tipo_comida = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=100)
+
+class meal_type(models.Model):
+    id_meal_type = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.nombre
+        return self.name
 
-class comida(models.Model):
-    id_comida = models.AutoField(primary_key=True)
-    tipo = models.ForeignKey(tipo_comida, on_delete=models.CASCADE)
-    nombre = models.CharField(max_length=100)
+
+class meal(models.Model):
+    id_meal = models.AutoField(primary_key=True)
+    type = models.ForeignKey(meal_type, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.nombre
-    
-class usuario(models.Model):
+        return self.name
+
+
+class user(models.Model):
     id_usuario = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.nombre
-    
-class usuario_comida(models.Model):
-    id_usuario_comida = models.AutoField(primary_key=True)
-    id_usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
-    id_comida = models.ForeignKey(comida, on_delete=models.CASCADE)
-    fecha = models.DateField()
+        return self.name
+
+
+class user_meal(models.Model):
+    id_user_meal = models.AutoField(primary_key=True)
+    id_user = models.ForeignKey(user, on_delete=models.CASCADE)
+    id_meal = models.ForeignKey(meal, on_delete=models.CASCADE)
+    date = models.DateField()
 
     def __str__(self):
-        return f"{self.usuario} - {self.comida} ({self.fecha})"
+        return f"{self.id_user} - {self.id_meal} ({self.date})"

@@ -1,7 +1,7 @@
 
 from typing import Any, Dict
 from django.shortcuts import render
-from .models import Comida, Tipo_Comida
+from .models import *
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView, TemplateView, TemplateView
 from django.urls import reverse_lazy
 
@@ -12,80 +12,85 @@ from django.utils.dateformat import format
 import sqlite3
 import openai
 
-from .forms import ComidaForm
-
 
 class HomeView(TemplateView):
     template_name = 'home.html'
 
-    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
-        context = super().get_context_data(**kwargs)
-        context['tipos_comida'] = Tipo_Comida.objects.all()
-        return context
+    # def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+    #     context = super().get_context_data(**kwargs)
+    #     context['tipos_comida'] = Tipo_Comida.objects.all()
+    #     return context
 
-    def post(self, request, *args, **kwargs):
-        context = self.get_context_data()
-        dia_semana = request.POST.get('dia_semana')  # int
-        tipo_comida = request.POST.get('tipo_comida')  # int
-        context['comidas'] = predecir_comida(dia_semana, tipo_comida)
-        return self.render_to_response(context)
+    # def post(self, request, *args, **kwargs):
+    #     context = self.get_context_data()
+    #     dia_semana = request.POST.get('dia_semana')  # int
+    #     tipo_comida = request.POST.get('tipo_comida')  # int
+    #     context['comidas'] = predict(dia_semana, tipo_comida)
+    #     return self.render_to_response(context)
 
-# CREAR funcion de entrenamiento inicial del modelo
+# Get the dataframe from the database
 
 
-def entrenamiento_inicial():
+def get_dataframe():
+    # create the dataframe from db.sqlite3 database using pd.read_sql_query
+    connection = sqlite3.connect("db.sqlite3")
+    dataframe = pd.read_sql_query(
+        "SELECT * FROM user_meal", connection)
+    connection.close()
+    return dataframe
+
+# Format the dataframe to be used in the model
+
+
+def format(dataframe):
+    # remove id column
+    dataframe = dataframe.drop(['id'], axis=1)
+    # convert the values from the column date to week day
+    dataframe['date'] = pd.to_datetime(dataframe['date'])
+    dataframe['date'] = dataframe['date'].dt.day_of_week
+    # index data from column nombre so its numeric
+    names = dataframe['name'].unique()
+    name_index = {value: index for index, value in enumerate(names)}
+    dataframe['name'] = dataframe['name'].apply(lambda x: name_index[x])
+    return dataframe
+
+# Train the model - If is already trained then add the new training data, else train the model with sintetic data
+
+
+def train(dataframe):
+    names = dataframe['name'].unique()
+    # Create training data
+    x_train = dataframe[['fecha']]
+    y_train = dataframe[['nombre']]
+
+    # Create the model
+    modelo = tf.keras.Sequential()
+    modelo.add(tf.keras.layers.Dense(units=1, input_shape=[1]))
+
+    # Compile the model
+    modelo.compile(optimizer='adam',
+                   loss='mean_squared_error')
+
+    # Train the model
+    modelo.fit(x_train, y_train, epochs=10)
+
+    # Prediction
+    dia_semana = int(dia_semana)
+    comida = modelo.predict([dia_semana])
+    comida = names[int(comida[0][0])]
+
+    return y_train.values.tolist()
+
+# Predict the meal for a given day of the week and meal type
+
+
+def predict(date, meal_type):
     pass
 
-# CREAR funcion de entrenamiento del modelo
+# Recommend a recipe based on the predicted meal for the date and meal type
 
 
-def entrenar_modelo():
-    pass
-
-# MODIFCIAR: Esta funcion debe devolver una lista de comidas que el usuario podria elegir para el dia.
-
-
-def predecir_comida():
-    pass
-    # # create the dataframe from db.sqlite3 database using pd.read_sql_query
-    # connection = sqlite3.connect("db.sqlite3")
-    # dataframe = pd.read_sql_query(
-    #     "SELECT * FROM gustos_comida", connection)
-    # connection.close()
-    # # remove id column
-    # dataframe = dataframe.drop(['id'], axis=1)
-    # # convert the values from the column fecha to week day
-    # dataframe['fecha'] = pd.to_datetime(dataframe['fecha'])
-    # dataframe['fecha'] = dataframe['fecha'].dt.day_of_week
-    # # index data from column nombre so its numeric
-    # nombres = dataframe['nombre'].unique()
-    # index_nombre = {value: index for index, value in enumerate(nombres)}
-    # dataframe['nombre'] = dataframe['nombre'].apply(lambda x: index_nombre[x])
-
-    # # Create training data
-    # x_train = dataframe[['fecha']]
-    # y_train = dataframe[['nombre']]
-
-    # # Create the model
-    # modelo = tf.keras.Sequential()
-    # modelo.add(tf.keras.layers.Dense(units=1, input_shape=[1]))
-
-    # # Compile the model
-    # modelo.compile(optimizer='adam',
-    #                loss='mean_squared_error')
-
-    # # Train the model
-    # modelo.fit(x_train, y_train, epochs=10)
-
-    # # Prediction
-    # dia_semana = int(dia_semana)
-    # comida = modelo.predict([dia_semana])
-    # comida = nombres[int(comida[0][0])]
-
-    # return y_train.values.tolist()
-
-
-def recomendar_receta_gpt(comida):
+def recommend_recipe_gpt(comida):
     # Generate a prompt for the GPT-3 model based on the user's input and return a recipe recommendation
     prompt = f"receta para preparar {comida}\nformato:\ningredientes:\npreparacion:\n"
 
@@ -101,12 +106,14 @@ def recomendar_receta_gpt(comida):
         temperature=0.7
     )
 
-    recomendacion = response.choices[0].text.strip()
+    recommenadtion = response.choices[0].text.strip()
 
-    return recomendacion
+    return recommenadtion
+
+# Return the nutritional value of the predicted meal for the date and meal type
 
 
-def mostrar_valor_nutricional_gpt(comida):
+def nutritional_value_gpt(comida):
     # Generate a prompt for the GPT-3 model based on the user's input and return a recipe recommendation
     prompt = f"valor nutricional general de {comida}\n"
 
@@ -122,6 +129,6 @@ def mostrar_valor_nutricional_gpt(comida):
         temperature=0.7
     )
 
-    recomendacion = response.choices[0].text.strip()
+    recommenadtion = response.choices[0].text.strip()
 
-    return recomendacion
+    return recommenadtion
