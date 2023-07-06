@@ -11,7 +11,8 @@ def import_data():
     collection = database['meals']
 
     # Query the data from MongoDB
-    data = collection.find({})  # You can customize the query as per your requirements
+    # You can customize the query as per your requirements
+    data = collection.find({})
 
     # Convert MongoDB data to pandas DataFrame
     df = pd.DataFrame(list(data))
@@ -20,8 +21,19 @@ def import_data():
     df.to_csv('data/dataframe.csv', index=False)
 
 # Formateamos el dataframe para poder utilizarlo en el modelo
+
+
 def format_data():
     pass
 
+# funcion para devolver el dataframe de entrenamiento
 
 
+def get_training_data():
+    pass
+
+# funcion para devolver el dataframe de testeo
+
+
+def get_testing_data():
+    pass
