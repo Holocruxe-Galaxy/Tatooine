@@ -1,14 +1,10 @@
-# entrenar el modelo
+
+
+# entrenar el modelo trayendo el dataframe.csv
 def train_model():
     pass
-# guardar el modelo
-
-
+# guardar el modelo en un archivo .h5
 def save_model():
     pass
 
-# crear checkpoint para el modelo
-
-
-def create_checkpoint():
-    pass
+# # crear checkpoint para el modelo

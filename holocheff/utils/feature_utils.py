@@ -1,3 +1,6 @@
+def predict_meal():
+    pass
+
 
 def recommend_recipe_gpt(comida):
     pass
@@ -43,4 +46,3 @@ def nutritional_value_gpt(comida):
     recommenadtion = response.choices[0].text.strip()
 
     return recommenadtion
-
