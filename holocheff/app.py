@@ -1,4 +1,3 @@
-from utils import data_utils
+from utils import data_utils, model_utils, feature_utils, view_utils
 
-data_utils.import_data()
-data_utils.format_data()
+data_utils.convert_to_csv()

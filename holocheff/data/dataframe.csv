@@ -1,31 +1,366 @@
-_id,day,user_id,breakfast,lunch,dinner
-64a551f4134bfeedd5f0f2ae,1,64a551f4134bfeedd5f0f28f,2,3,4
-64a551f4134bfeedd5f0f2af,2,64a551f4134bfeedd5f0f28f,5,2,0
-64a551f4134bfeedd5f0f2b0,3,64a551f4134bfeedd5f0f28f,4,4,2
-64a551f4134bfeedd5f0f2b1,4,64a551f4134bfeedd5f0f28f,4,6,2
-64a551f4134bfeedd5f0f2b2,5,64a551f4134bfeedd5f0f28f,0,8,2
-64a551f4134bfeedd5f0f2b3,6,64a551f4134bfeedd5f0f28f,3,2,3
-64a551f4134bfeedd5f0f2b4,7,64a551f4134bfeedd5f0f28f,2,0,2
-64a551f4134bfeedd5f0f2b5,8,64a551f4134bfeedd5f0f28f,8,2,2
-64a551f4134bfeedd5f0f2b6,9,64a551f4134bfeedd5f0f28f,1,6,1
-64a551f4134bfeedd5f0f2b7,10,64a551f4134bfeedd5f0f28f,0,1,3
-64a551f4134bfeedd5f0f2b8,11,64a551f4134bfeedd5f0f28f,1,4,8
-64a551f4134bfeedd5f0f2b9,12,64a551f4134bfeedd5f0f28f,0,1,9
-64a551f4134bfeedd5f0f2ba,13,64a551f4134bfeedd5f0f28f,3,2,5
-64a551f4134bfeedd5f0f2bb,14,64a551f4134bfeedd5f0f28f,8,6,4
-64a551f4134bfeedd5f0f2bc,15,64a551f4134bfeedd5f0f28f,8,5,1
-64a551f4134bfeedd5f0f2bd,16,64a551f4134bfeedd5f0f28f,6,1,0
-64a551f4134bfeedd5f0f2be,17,64a551f4134bfeedd5f0f28f,6,3,0
-64a551f4134bfeedd5f0f2bf,18,64a551f4134bfeedd5f0f28f,8,7,6
-64a551f4134bfeedd5f0f2c0,19,64a551f4134bfeedd5f0f28f,1,4,8
-64a551f4134bfeedd5f0f2c1,20,64a551f4134bfeedd5f0f28f,1,4,2
-64a551f4134bfeedd5f0f2c2,21,64a551f4134bfeedd5f0f28f,7,8,0
-64a551f4134bfeedd5f0f2c3,22,64a551f4134bfeedd5f0f28f,2,3,2
-64a551f4134bfeedd5f0f2c4,23,64a551f4134bfeedd5f0f28f,4,4,6
-64a551f4134bfeedd5f0f2c5,24,64a551f4134bfeedd5f0f28f,2,3,7
-64a551f4134bfeedd5f0f2c6,25,64a551f4134bfeedd5f0f28f,6,7,1
-64a551f4134bfeedd5f0f2c7,26,64a551f4134bfeedd5f0f28f,8,2,4
-64a551f4134bfeedd5f0f2c8,27,64a551f4134bfeedd5f0f28f,7,7,3
-64a551f4134bfeedd5f0f2c9,28,64a551f4134bfeedd5f0f28f,2,0,6
-64a551f4134bfeedd5f0f2ca,29,64a551f4134bfeedd5f0f28f,2,3,3
-64a551f4134bfeedd5f0f2cb,30,64a551f4134bfeedd5f0f28f,0,0,6
+_id,date,user_id,breakfast,lunch,dinner
+64a84fa9e321358b245076ca,2022-01-01,64a84fa9e321358b245076ab,Veggie Omelette,Mushroom Risotto,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245076cb,2022-01-02,64a84fa9e321358b245076ab,Scrambled Egg Toast,Mushroom Risotto,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076cc,2022-01-03,64a84fa9e321358b245076ab,French Toast,Grilled Chicken Wrap,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245076cd,2022-01-04,64a84fa9e321358b245076ab,Breakfast Burrito,Margherita Pizza,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245076ce,2022-01-05,64a84fa9e321358b245076ab,Veggie Omelette,Pasta Primavera,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076cf,2022-01-06,64a84fa9e321358b245076ab,Avocado Toast,Margherita Pizza,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245076d0,2022-01-07,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245076d1,2022-01-08,64a84fa9e321358b245076ab,Veggie Omelette,Beef Stir-Fry,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245076d2,2022-01-09,64a84fa9e321358b245076ab,Scrambled Egg Toast,Mushroom Risotto,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076d3,2022-01-10,64a84fa9e321358b245076ab,Avocado Toast,Beef Stir-Fry,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245076d4,2022-01-11,64a84fa9e321358b245076ab,French Toast,Pasta Primavera,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245076d5,2022-01-12,64a84fa9e321358b245076ab,Fruit Salad,Mushroom Risotto,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245076d6,2022-01-13,64a84fa9e321358b245076ab,Avocado Toast,Chicken Caesar Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b245076d7,2022-01-14,64a84fa9e321358b245076ab,Avocado Toast,Margherita Pizza,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245076d8,2022-01-15,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Quinoa Salad,Spaghetti Bolognese
+64a84fa9e321358b245076d9,2022-01-16,64a84fa9e321358b245076ab,Veggie Omelette,Vegetable Curry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245076da,2022-01-17,64a84fa9e321358b245076ab,French Toast,Tuna Salad Sandwich,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245076db,2022-01-18,64a84fa9e321358b245076ab,Breakfast Burrito,Mushroom Risotto,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245076dc,2022-01-19,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Grilled Chicken Wrap,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076dd,2022-01-20,64a84fa9e321358b245076ab,Avocado Toast,Tuna Salad Sandwich,Stir-Fried Beef with Broccoli
+64a84fa9e321358b245076de,2022-01-21,64a84fa9e321358b245076ab,Avocado Toast,Quinoa Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076df,2022-01-22,64a84fa9e321358b245076ab,Fruit Salad,Grilled Chicken Wrap,Baked Chicken with Sweet Potato
+64a84fa9e321358b245076e0,2022-01-23,64a84fa9e321358b245076ab,Scrambled Egg Toast,Margherita Pizza,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245076e1,2022-01-24,64a84fa9e321358b245076ab,French Toast,Grilled Chicken Wrap,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245076e2,2022-01-25,64a84fa9e321358b245076ab,French Toast,Pasta Primavera,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245076e3,2022-01-26,64a84fa9e321358b245076ab,Scrambled Egg Toast,Caprese Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b245076e4,2022-01-27,64a84fa9e321358b245076ab,Scrambled Egg Toast,Margherita Pizza,Baked Chicken with Sweet Potato
+64a84fa9e321358b245076e5,2022-01-28,64a84fa9e321358b245076ab,Smoothie Bowl,Quinoa Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076e6,2022-01-29,64a84fa9e321358b245076ab,Fruit Salad,Vegetable Curry,Stir-Fried Beef with Broccoli
+64a84fa9e321358b245076e7,2022-01-30,64a84fa9e321358b245076ab,Veggie Omelette,Chicken Caesar Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245076e8,2022-01-31,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Margherita Pizza,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245076e9,2022-02-01,64a84fa9e321358b245076ab,Avocado Toast,Margherita Pizza,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245076ea,2022-02-02,64a84fa9e321358b245076ab,Cereal with Milk,Pasta Primavera,Baked Chicken with Sweet Potato
+64a84fa9e321358b245076eb,2022-02-03,64a84fa9e321358b245076ab,Breakfast Burrito,Chicken Caesar Salad,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245076ec,2022-02-04,64a84fa9e321358b245076ab,Fruit Salad,Caprese Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076ed,2022-02-05,64a84fa9e321358b245076ab,Cereal with Milk,Mushroom Risotto,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076ee,2022-02-06,64a84fa9e321358b245076ab,Cereal with Milk,Beef Stir-Fry,Baked Chicken with Sweet Potato
+64a84fa9e321358b245076ef,2022-02-07,64a84fa9e321358b245076ab,Cereal with Milk,Beef Stir-Fry,Stir-Fried Beef with Broccoli
+64a84fa9e321358b245076f0,2022-02-08,64a84fa9e321358b245076ab,Scrambled Egg Toast,Beef Stir-Fry,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076f1,2022-02-09,64a84fa9e321358b245076ab,French Toast,Tuna Salad Sandwich,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245076f2,2022-02-10,64a84fa9e321358b245076ab,Yogurt Parfait,Tuna Salad Sandwich,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245076f3,2022-02-11,64a84fa9e321358b245076ab,Yogurt Parfait,Vegetable Curry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245076f4,2022-02-12,64a84fa9e321358b245076ab,Smoothie Bowl,Chicken Caesar Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245076f5,2022-02-13,64a84fa9e321358b245076ab,Smoothie Bowl,Grilled Chicken Wrap,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245076f6,2022-02-14,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Caprese Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245076f7,2022-02-15,64a84fa9e321358b245076ab,Avocado Toast,Caprese Salad,Vegetable Lasagna
+64a84fa9e321358b245076f8,2022-02-16,64a84fa9e321358b245076ab,Breakfast Burrito,Beef Stir-Fry,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245076f9,2022-02-17,64a84fa9e321358b245076ab,French Toast,Chicken Caesar Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245076fa,2022-02-18,64a84fa9e321358b245076ab,Cereal with Milk,Mushroom Risotto,Baked Chicken with Sweet Potato
+64a84fa9e321358b245076fb,2022-02-19,64a84fa9e321358b245076ab,Avocado Toast,Margherita Pizza,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245076fc,2022-02-20,64a84fa9e321358b245076ab,Smoothie Bowl,Grilled Chicken Wrap,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245076fd,2022-02-21,64a84fa9e321358b245076ab,French Toast,Margherita Pizza,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245076fe,2022-02-22,64a84fa9e321358b245076ab,Yogurt Parfait,Vegetable Curry,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245076ff,2022-02-23,64a84fa9e321358b245076ab,Cereal with Milk,Caprese Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507700,2022-02-24,64a84fa9e321358b245076ab,Avocado Toast,Margherita Pizza,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507701,2022-02-25,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Margherita Pizza,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507702,2022-02-26,64a84fa9e321358b245076ab,Scrambled Egg Toast,Mushroom Risotto,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507703,2022-02-27,64a84fa9e321358b245076ab,Cereal with Milk,Grilled Chicken Wrap,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507704,2022-02-28,64a84fa9e321358b245076ab,Yogurt Parfait,Chicken Caesar Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507705,2022-03-01,64a84fa9e321358b245076ab,Breakfast Burrito,Mushroom Risotto,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507706,2022-03-02,64a84fa9e321358b245076ab,Veggie Omelette,Chicken Caesar Salad,Vegetable Lasagna
+64a84fa9e321358b24507707,2022-03-03,64a84fa9e321358b245076ab,Scrambled Egg Toast,Beef Stir-Fry,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507708,2022-03-04,64a84fa9e321358b245076ab,Veggie Omelette,Beef Stir-Fry,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507709,2022-03-05,64a84fa9e321358b245076ab,Breakfast Burrito,Caprese Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b2450770a,2022-03-06,64a84fa9e321358b245076ab,Fruit Salad,Margherita Pizza,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b2450770b,2022-03-07,64a84fa9e321358b245076ab,Veggie Omelette,Tuna Salad Sandwich,Spaghetti Bolognese
+64a84fa9e321358b2450770c,2022-03-08,64a84fa9e321358b245076ab,Fruit Salad,Margherita Pizza,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450770d,2022-03-09,64a84fa9e321358b245076ab,Avocado Toast,Tuna Salad Sandwich,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b2450770e,2022-03-10,64a84fa9e321358b245076ab,Cereal with Milk,Vegetable Curry,Baked Chicken with Sweet Potato
+64a84fa9e321358b2450770f,2022-03-11,64a84fa9e321358b245076ab,Smoothie Bowl,Chicken Caesar Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507710,2022-03-12,64a84fa9e321358b245076ab,Yogurt Parfait,Beef Stir-Fry,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507711,2022-03-13,64a84fa9e321358b245076ab,Fruit Salad,Mushroom Risotto,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507712,2022-03-14,64a84fa9e321358b245076ab,Breakfast Burrito,Margherita Pizza,Vegetable Lasagna
+64a84fa9e321358b24507713,2022-03-15,64a84fa9e321358b245076ab,French Toast,Pasta Primavera,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b24507714,2022-03-16,64a84fa9e321358b245076ab,Veggie Omelette,Vegetable Curry,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507715,2022-03-17,64a84fa9e321358b245076ab,Cereal with Milk,Beef Stir-Fry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507716,2022-03-18,64a84fa9e321358b245076ab,Yogurt Parfait,Chicken Caesar Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507717,2022-03-19,64a84fa9e321358b245076ab,French Toast,Vegetable Curry,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507718,2022-03-20,64a84fa9e321358b245076ab,Yogurt Parfait,Pasta Primavera,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507719,2022-03-21,64a84fa9e321358b245076ab,Breakfast Burrito,Beef Stir-Fry,Spaghetti Bolognese
+64a84fa9e321358b2450771a,2022-03-22,64a84fa9e321358b245076ab,French Toast,Tuna Salad Sandwich,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b2450771b,2022-03-23,64a84fa9e321358b245076ab,Yogurt Parfait,Tuna Salad Sandwich,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450771c,2022-03-24,64a84fa9e321358b245076ab,Breakfast Burrito,Mushroom Risotto,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b2450771d,2022-03-25,64a84fa9e321358b245076ab,Smoothie Bowl,Quinoa Salad,Spaghetti Bolognese
+64a84fa9e321358b2450771e,2022-03-26,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Quinoa Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450771f,2022-03-27,64a84fa9e321358b245076ab,Fruit Salad,Tuna Salad Sandwich,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507720,2022-03-28,64a84fa9e321358b245076ab,Cereal with Milk,Grilled Chicken Wrap,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507721,2022-03-29,64a84fa9e321358b245076ab,French Toast,Grilled Chicken Wrap,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507722,2022-03-30,64a84fa9e321358b245076ab,Smoothie Bowl,Quinoa Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507723,2022-03-31,64a84fa9e321358b245076ab,Veggie Omelette,Caprese Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507724,2022-04-01,64a84fa9e321358b245076ab,Veggie Omelette,Caprese Salad,Vegetable Lasagna
+64a84fa9e321358b24507725,2022-04-02,64a84fa9e321358b245076ab,Scrambled Egg Toast,Mushroom Risotto,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507726,2022-04-03,64a84fa9e321358b245076ab,Breakfast Burrito,Beef Stir-Fry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507727,2022-04-04,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Mushroom Risotto,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507728,2022-04-05,64a84fa9e321358b245076ab,Smoothie Bowl,Beef Stir-Fry,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507729,2022-04-06,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Spaghetti Bolognese
+64a84fa9e321358b2450772a,2022-04-07,64a84fa9e321358b245076ab,Smoothie Bowl,Margherita Pizza,Baked Chicken with Sweet Potato
+64a84fa9e321358b2450772b,2022-04-08,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450772c,2022-04-09,64a84fa9e321358b245076ab,Avocado Toast,Pasta Primavera,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450772d,2022-04-10,64a84fa9e321358b245076ab,Scrambled Egg Toast,Mushroom Risotto,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b2450772e,2022-04-11,64a84fa9e321358b245076ab,Veggie Omelette,Chicken Caesar Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450772f,2022-04-12,64a84fa9e321358b245076ab,Cereal with Milk,Beef Stir-Fry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507730,2022-04-13,64a84fa9e321358b245076ab,Breakfast Burrito,Caprese Salad,Spaghetti Bolognese
+64a84fa9e321358b24507731,2022-04-14,64a84fa9e321358b245076ab,Cereal with Milk,Pasta Primavera,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507732,2022-04-15,64a84fa9e321358b245076ab,French Toast,Beef Stir-Fry,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507733,2022-04-16,64a84fa9e321358b245076ab,Smoothie Bowl,Margherita Pizza,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507734,2022-04-17,64a84fa9e321358b245076ab,Veggie Omelette,Beef Stir-Fry,Vegetable Lasagna
+64a84fa9e321358b24507735,2022-04-18,64a84fa9e321358b245076ab,Cereal with Milk,Tuna Salad Sandwich,Vegetable Lasagna
+64a84fa9e321358b24507736,2022-04-19,64a84fa9e321358b245076ab,Veggie Omelette,Margherita Pizza,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507737,2022-04-20,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Tuna Salad Sandwich,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b24507738,2022-04-21,64a84fa9e321358b245076ab,French Toast,Margherita Pizza,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507739,2022-04-22,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Beef Stir-Fry,Vegetable Lasagna
+64a84fa9e321358b2450773a,2022-04-23,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b2450773b,2022-04-24,64a84fa9e321358b245076ab,Cereal with Milk,Pasta Primavera,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b2450773c,2022-04-25,64a84fa9e321358b245076ab,Breakfast Burrito,Mushroom Risotto,Baked Chicken with Sweet Potato
+64a84fa9e321358b2450773d,2022-04-26,64a84fa9e321358b245076ab,Veggie Omelette,Vegetable Curry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450773e,2022-04-27,64a84fa9e321358b245076ab,Cereal with Milk,Vegetable Curry,Spaghetti Bolognese
+64a84fa9e321358b2450773f,2022-04-28,64a84fa9e321358b245076ab,Scrambled Egg Toast,Chicken Caesar Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507740,2022-04-29,64a84fa9e321358b245076ab,Veggie Omelette,Margherita Pizza,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507741,2022-04-30,64a84fa9e321358b245076ab,Veggie Omelette,Caprese Salad,Spaghetti Bolognese
+64a84fa9e321358b24507742,2022-05-01,64a84fa9e321358b245076ab,Breakfast Burrito,Chicken Caesar Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507743,2022-05-02,64a84fa9e321358b245076ab,French Toast,Mushroom Risotto,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507744,2022-05-03,64a84fa9e321358b245076ab,Breakfast Burrito,Margherita Pizza,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507745,2022-05-04,64a84fa9e321358b245076ab,Breakfast Burrito,Grilled Chicken Wrap,Vegetable Lasagna
+64a84fa9e321358b24507746,2022-05-05,64a84fa9e321358b245076ab,Fruit Salad,Chicken Caesar Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507747,2022-05-06,64a84fa9e321358b245076ab,Scrambled Egg Toast,Caprese Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507748,2022-05-07,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Margherita Pizza,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507749,2022-05-08,64a84fa9e321358b245076ab,Smoothie Bowl,Quinoa Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450774a,2022-05-09,64a84fa9e321358b245076ab,Avocado Toast,Tuna Salad Sandwich,Spaghetti Bolognese
+64a84fa9e321358b2450774b,2022-05-10,64a84fa9e321358b245076ab,Avocado Toast,Margherita Pizza,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b2450774c,2022-05-11,64a84fa9e321358b245076ab,Avocado Toast,Chicken Caesar Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b2450774d,2022-05-12,64a84fa9e321358b245076ab,Fruit Salad,Margherita Pizza,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b2450774e,2022-05-13,64a84fa9e321358b245076ab,Breakfast Burrito,Caprese Salad,Stir-Fried Beef with Broccoli
+64a84fa9e321358b2450774f,2022-05-14,64a84fa9e321358b245076ab,Veggie Omelette,Tuna Salad Sandwich,Spaghetti Bolognese
+64a84fa9e321358b24507750,2022-05-15,64a84fa9e321358b245076ab,Avocado Toast,Quinoa Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507751,2022-05-16,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507752,2022-05-17,64a84fa9e321358b245076ab,Veggie Omelette,Beef Stir-Fry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507753,2022-05-18,64a84fa9e321358b245076ab,Avocado Toast,Mushroom Risotto,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507754,2022-05-19,64a84fa9e321358b245076ab,Veggie Omelette,Pasta Primavera,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507755,2022-05-20,64a84fa9e321358b245076ab,Yogurt Parfait,Mushroom Risotto,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b24507756,2022-05-21,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Chicken Caesar Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507757,2022-05-22,64a84fa9e321358b245076ab,Scrambled Egg Toast,Pasta Primavera,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507758,2022-05-23,64a84fa9e321358b245076ab,Scrambled Egg Toast,Caprese Salad,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507759,2022-05-24,64a84fa9e321358b245076ab,Fruit Salad,Caprese Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b2450775a,2022-05-25,64a84fa9e321358b245076ab,French Toast,Chicken Caesar Salad,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b2450775b,2022-05-26,64a84fa9e321358b245076ab,Scrambled Egg Toast,Mushroom Risotto,Baked Chicken with Sweet Potato
+64a84fa9e321358b2450775c,2022-05-27,64a84fa9e321358b245076ab,Scrambled Egg Toast,Chicken Caesar Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b2450775d,2022-05-28,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450775e,2022-05-29,64a84fa9e321358b245076ab,Yogurt Parfait,Grilled Chicken Wrap,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450775f,2022-05-30,64a84fa9e321358b245076ab,Smoothie Bowl,Tuna Salad Sandwich,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507760,2022-05-31,64a84fa9e321358b245076ab,Smoothie Bowl,Grilled Chicken Wrap,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507761,2022-06-01,64a84fa9e321358b245076ab,Yogurt Parfait,Pasta Primavera,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507762,2022-06-02,64a84fa9e321358b245076ab,Avocado Toast,Grilled Chicken Wrap,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507763,2022-06-03,64a84fa9e321358b245076ab,Smoothie Bowl,Vegetable Curry,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507764,2022-06-04,64a84fa9e321358b245076ab,Veggie Omelette,Chicken Caesar Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507765,2022-06-05,64a84fa9e321358b245076ab,Yogurt Parfait,Vegetable Curry,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507766,2022-06-06,64a84fa9e321358b245076ab,Veggie Omelette,Pasta Primavera,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507767,2022-06-07,64a84fa9e321358b245076ab,Avocado Toast,Chicken Caesar Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507768,2022-06-08,64a84fa9e321358b245076ab,Fruit Salad,Pasta Primavera,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507769,2022-06-09,64a84fa9e321358b245076ab,Veggie Omelette,Margherita Pizza,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b2450776a,2022-06-10,64a84fa9e321358b245076ab,Cereal with Milk,Mushroom Risotto,Vegetable Lasagna
+64a84fa9e321358b2450776b,2022-06-11,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450776c,2022-06-12,64a84fa9e321358b245076ab,Smoothie Bowl,Margherita Pizza,Vegetable Lasagna
+64a84fa9e321358b2450776d,2022-06-13,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Chicken Caesar Salad,Vegetable Lasagna
+64a84fa9e321358b2450776e,2022-06-14,64a84fa9e321358b245076ab,Cereal with Milk,Tuna Salad Sandwich,Spaghetti Bolognese
+64a84fa9e321358b2450776f,2022-06-15,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Grilled Chicken Wrap,Vegetable Lasagna
+64a84fa9e321358b24507770,2022-06-16,64a84fa9e321358b245076ab,Yogurt Parfait,Beef Stir-Fry,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507771,2022-06-17,64a84fa9e321358b245076ab,Yogurt Parfait,Pasta Primavera,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507772,2022-06-18,64a84fa9e321358b245076ab,Smoothie Bowl,Quinoa Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507773,2022-06-19,64a84fa9e321358b245076ab,Scrambled Egg Toast,Caprese Salad,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b24507774,2022-06-20,64a84fa9e321358b245076ab,Cereal with Milk,Vegetable Curry,Spaghetti Bolognese
+64a84fa9e321358b24507775,2022-06-21,64a84fa9e321358b245076ab,Yogurt Parfait,Quinoa Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507776,2022-06-22,64a84fa9e321358b245076ab,Avocado Toast,Quinoa Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507777,2022-06-23,64a84fa9e321358b245076ab,Scrambled Egg Toast,Caprese Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507778,2022-06-24,64a84fa9e321358b245076ab,Smoothie Bowl,Chicken Caesar Salad,Spaghetti Bolognese
+64a84fa9e321358b24507779,2022-06-25,64a84fa9e321358b245076ab,Breakfast Burrito,Mushroom Risotto,Stir-Fried Beef with Broccoli
+64a84fa9e321358b2450777a,2022-06-26,64a84fa9e321358b245076ab,Breakfast Burrito,Vegetable Curry,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b2450777b,2022-06-27,64a84fa9e321358b245076ab,Avocado Toast,Beef Stir-Fry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450777c,2022-06-28,64a84fa9e321358b245076ab,Smoothie Bowl,Pasta Primavera,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450777d,2022-06-29,64a84fa9e321358b245076ab,Breakfast Burrito,Mushroom Risotto,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450777e,2022-06-30,64a84fa9e321358b245076ab,Breakfast Burrito,Margherita Pizza,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b2450777f,2022-07-01,64a84fa9e321358b245076ab,Avocado Toast,Tuna Salad Sandwich,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507780,2022-07-02,64a84fa9e321358b245076ab,Cereal with Milk,Margherita Pizza,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507781,2022-07-03,64a84fa9e321358b245076ab,Smoothie Bowl,Caprese Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507782,2022-07-04,64a84fa9e321358b245076ab,Cereal with Milk,Margherita Pizza,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507783,2022-07-05,64a84fa9e321358b245076ab,French Toast,Pasta Primavera,Vegetable Lasagna
+64a84fa9e321358b24507784,2022-07-06,64a84fa9e321358b245076ab,Smoothie Bowl,Chicken Caesar Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507785,2022-07-07,64a84fa9e321358b245076ab,Cereal with Milk,Mushroom Risotto,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507786,2022-07-08,64a84fa9e321358b245076ab,Scrambled Egg Toast,Pasta Primavera,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507787,2022-07-09,64a84fa9e321358b245076ab,Cereal with Milk,Vegetable Curry,Vegetable Lasagna
+64a84fa9e321358b24507788,2022-07-10,64a84fa9e321358b245076ab,French Toast,Tuna Salad Sandwich,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b24507789,2022-07-11,64a84fa9e321358b245076ab,Cereal with Milk,Tuna Salad Sandwich,Stir-Fried Beef with Broccoli
+64a84fa9e321358b2450778a,2022-07-12,64a84fa9e321358b245076ab,French Toast,Quinoa Salad,Stir-Fried Beef with Broccoli
+64a84fa9e321358b2450778b,2022-07-13,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Beef Stir-Fry,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b2450778c,2022-07-14,64a84fa9e321358b245076ab,Breakfast Burrito,Quinoa Salad,Spaghetti Bolognese
+64a84fa9e321358b2450778d,2022-07-15,64a84fa9e321358b245076ab,French Toast,Grilled Chicken Wrap,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450778e,2022-07-16,64a84fa9e321358b245076ab,Fruit Salad,Caprese Salad,Vegetable Lasagna
+64a84fa9e321358b2450778f,2022-07-17,64a84fa9e321358b245076ab,Breakfast Burrito,Caprese Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507790,2022-07-18,64a84fa9e321358b245076ab,French Toast,Tuna Salad Sandwich,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507791,2022-07-19,64a84fa9e321358b245076ab,French Toast,Vegetable Curry,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507792,2022-07-20,64a84fa9e321358b245076ab,Fruit Salad,Chicken Caesar Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507793,2022-07-21,64a84fa9e321358b245076ab,Avocado Toast,Beef Stir-Fry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507794,2022-07-22,64a84fa9e321358b245076ab,Breakfast Burrito,Mushroom Risotto,Spaghetti Bolognese
+64a84fa9e321358b24507795,2022-07-23,64a84fa9e321358b245076ab,Fruit Salad,Pasta Primavera,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507796,2022-07-24,64a84fa9e321358b245076ab,Yogurt Parfait,Vegetable Curry,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507797,2022-07-25,64a84fa9e321358b245076ab,Scrambled Egg Toast,Tuna Salad Sandwich,Spaghetti Bolognese
+64a84fa9e321358b24507798,2022-07-26,64a84fa9e321358b245076ab,Breakfast Burrito,Pasta Primavera,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507799,2022-07-27,64a84fa9e321358b245076ab,French Toast,Margherita Pizza,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b2450779a,2022-07-28,64a84fa9e321358b245076ab,Yogurt Parfait,Grilled Chicken Wrap,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b2450779b,2022-07-29,64a84fa9e321358b245076ab,Breakfast Burrito,Quinoa Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450779c,2022-07-30,64a84fa9e321358b245076ab,Avocado Toast,Quinoa Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b2450779d,2022-07-31,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Spaghetti Bolognese
+64a84fa9e321358b2450779e,2022-08-01,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Grilled Chicken Wrap,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450779f,2022-08-02,64a84fa9e321358b245076ab,Smoothie Bowl,Vegetable Curry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077a0,2022-08-03,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Pasta Primavera,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077a1,2022-08-04,64a84fa9e321358b245076ab,Scrambled Egg Toast,Mushroom Risotto,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245077a2,2022-08-05,64a84fa9e321358b245076ab,Avocado Toast,Grilled Chicken Wrap,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077a3,2022-08-06,64a84fa9e321358b245076ab,Veggie Omelette,Vegetable Curry,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245077a4,2022-08-07,64a84fa9e321358b245076ab,Veggie Omelette,Caprese Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245077a5,2022-08-08,64a84fa9e321358b245076ab,French Toast,Grilled Chicken Wrap,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077a6,2022-08-09,64a84fa9e321358b245076ab,Breakfast Burrito,Pasta Primavera,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077a7,2022-08-10,64a84fa9e321358b245076ab,Cereal with Milk,Tuna Salad Sandwich,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077a8,2022-08-11,64a84fa9e321358b245076ab,Avocado Toast,Caprese Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077a9,2022-08-12,64a84fa9e321358b245076ab,Smoothie Bowl,Quinoa Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077aa,2022-08-13,64a84fa9e321358b245076ab,Yogurt Parfait,Grilled Chicken Wrap,Spaghetti Bolognese
+64a84fa9e321358b245077ab,2022-08-14,64a84fa9e321358b245076ab,Scrambled Egg Toast,Pasta Primavera,Stir-Fried Beef with Broccoli
+64a84fa9e321358b245077ac,2022-08-15,64a84fa9e321358b245076ab,Yogurt Parfait,Margherita Pizza,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077ad,2022-08-16,64a84fa9e321358b245076ab,Fruit Salad,Grilled Chicken Wrap,Stir-Fried Beef with Broccoli
+64a84fa9e321358b245077ae,2022-08-17,64a84fa9e321358b245076ab,Fruit Salad,Vegetable Curry,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077af,2022-08-18,64a84fa9e321358b245076ab,Smoothie Bowl,Pasta Primavera,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077b0,2022-08-19,64a84fa9e321358b245076ab,Yogurt Parfait,Pasta Primavera,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077b1,2022-08-20,64a84fa9e321358b245076ab,Yogurt Parfait,Caprese Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077b2,2022-08-21,64a84fa9e321358b245076ab,Scrambled Egg Toast,Caprese Salad,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077b3,2022-08-22,64a84fa9e321358b245076ab,Smoothie Bowl,Beef Stir-Fry,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077b4,2022-08-23,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Margherita Pizza,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077b5,2022-08-24,64a84fa9e321358b245076ab,Avocado Toast,Mushroom Risotto,Spaghetti Bolognese
+64a84fa9e321358b245077b6,2022-08-25,64a84fa9e321358b245076ab,Yogurt Parfait,Mushroom Risotto,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077b7,2022-08-26,64a84fa9e321358b245076ab,Fruit Salad,Chicken Caesar Salad,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077b8,2022-08-27,64a84fa9e321358b245076ab,Yogurt Parfait,Beef Stir-Fry,Vegetable Lasagna
+64a84fa9e321358b245077b9,2022-08-28,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Chicken Caesar Salad,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077ba,2022-08-29,64a84fa9e321358b245076ab,Fruit Salad,Chicken Caesar Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245077bb,2022-08-30,64a84fa9e321358b245076ab,Fruit Salad,Vegetable Curry,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077bc,2022-08-31,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Tuna Salad Sandwich,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077bd,2022-09-01,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077be,2022-09-02,64a84fa9e321358b245076ab,Smoothie Bowl,Tuna Salad Sandwich,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077bf,2022-09-03,64a84fa9e321358b245076ab,French Toast,Tuna Salad Sandwich,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077c0,2022-09-04,64a84fa9e321358b245076ab,Yogurt Parfait,Margherita Pizza,Spaghetti Bolognese
+64a84fa9e321358b245077c1,2022-09-05,64a84fa9e321358b245076ab,Yogurt Parfait,Chicken Caesar Salad,Stir-Fried Beef with Broccoli
+64a84fa9e321358b245077c2,2022-09-06,64a84fa9e321358b245076ab,Fruit Salad,Mushroom Risotto,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077c3,2022-09-07,64a84fa9e321358b245076ab,Avocado Toast,Caprese Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077c4,2022-09-08,64a84fa9e321358b245076ab,French Toast,Pasta Primavera,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077c5,2022-09-09,64a84fa9e321358b245076ab,Avocado Toast,Caprese Salad,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077c6,2022-09-10,64a84fa9e321358b245076ab,Scrambled Egg Toast,Mushroom Risotto,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077c7,2022-09-11,64a84fa9e321358b245076ab,Fruit Salad,Grilled Chicken Wrap,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077c8,2022-09-12,64a84fa9e321358b245076ab,Smoothie Bowl,Quinoa Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245077c9,2022-09-13,64a84fa9e321358b245076ab,Avocado Toast,Pasta Primavera,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b245077ca,2022-09-14,64a84fa9e321358b245076ab,Cereal with Milk,Quinoa Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077cb,2022-09-15,64a84fa9e321358b245076ab,Fruit Salad,Pasta Primavera,Spaghetti Bolognese
+64a84fa9e321358b245077cc,2022-09-16,64a84fa9e321358b245076ab,French Toast,Quinoa Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077cd,2022-09-17,64a84fa9e321358b245076ab,Scrambled Egg Toast,Vegetable Curry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077ce,2022-09-18,64a84fa9e321358b245076ab,Fruit Salad,Margherita Pizza,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077cf,2022-09-19,64a84fa9e321358b245076ab,Yogurt Parfait,Pasta Primavera,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077d0,2022-09-20,64a84fa9e321358b245076ab,French Toast,Grilled Chicken Wrap,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077d1,2022-09-21,64a84fa9e321358b245076ab,French Toast,Chicken Caesar Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077d2,2022-09-22,64a84fa9e321358b245076ab,Fruit Salad,Chicken Caesar Salad,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077d3,2022-09-23,64a84fa9e321358b245076ab,Cereal with Milk,Beef Stir-Fry,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077d4,2022-09-24,64a84fa9e321358b245076ab,Cereal with Milk,Chicken Caesar Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077d5,2022-09-25,64a84fa9e321358b245076ab,Yogurt Parfait,Margherita Pizza,Vegetable Lasagna
+64a84fa9e321358b245077d6,2022-09-26,64a84fa9e321358b245076ab,Fruit Salad,Vegetable Curry,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077d7,2022-09-27,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Chicken Caesar Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077d8,2022-09-28,64a84fa9e321358b245076ab,French Toast,Mushroom Risotto,Spaghetti Bolognese
+64a84fa9e321358b245077d9,2022-09-29,64a84fa9e321358b245076ab,Avocado Toast,Tuna Salad Sandwich,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077da,2022-09-30,64a84fa9e321358b245076ab,French Toast,Vegetable Curry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077db,2022-10-01,64a84fa9e321358b245076ab,Yogurt Parfait,Mushroom Risotto,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077dc,2022-10-02,64a84fa9e321358b245076ab,Smoothie Bowl,Pasta Primavera,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077dd,2022-10-03,64a84fa9e321358b245076ab,Scrambled Egg Toast,Beef Stir-Fry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077de,2022-10-04,64a84fa9e321358b245076ab,Smoothie Bowl,Mushroom Risotto,Stir-Fried Beef with Broccoli
+64a84fa9e321358b245077df,2022-10-05,64a84fa9e321358b245076ab,Smoothie Bowl,Chicken Caesar Salad,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077e0,2022-10-06,64a84fa9e321358b245076ab,Breakfast Burrito,Chicken Caesar Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077e1,2022-10-07,64a84fa9e321358b245076ab,Veggie Omelette,Mushroom Risotto,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077e2,2022-10-08,64a84fa9e321358b245076ab,Smoothie Bowl,Mushroom Risotto,Stir-Fried Beef with Broccoli
+64a84fa9e321358b245077e3,2022-10-09,64a84fa9e321358b245076ab,Breakfast Burrito,Tuna Salad Sandwich,Spaghetti Bolognese
+64a84fa9e321358b245077e4,2022-10-10,64a84fa9e321358b245076ab,Breakfast Burrito,Tuna Salad Sandwich,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077e5,2022-10-11,64a84fa9e321358b245076ab,Smoothie Bowl,Vegetable Curry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077e6,2022-10-12,64a84fa9e321358b245076ab,Fruit Salad,Chicken Caesar Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077e7,2022-10-13,64a84fa9e321358b245076ab,Cereal with Milk,Vegetable Curry,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b245077e8,2022-10-14,64a84fa9e321358b245076ab,Yogurt Parfait,Vegetable Curry,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077e9,2022-10-15,64a84fa9e321358b245076ab,Fruit Salad,Mushroom Risotto,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077ea,2022-10-16,64a84fa9e321358b245076ab,Avocado Toast,Mushroom Risotto,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077eb,2022-10-17,64a84fa9e321358b245076ab,Fruit Salad,Tuna Salad Sandwich,Vegetable Lasagna
+64a84fa9e321358b245077ec,2022-10-18,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Caprese Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077ed,2022-10-19,64a84fa9e321358b245076ab,Yogurt Parfait,Margherita Pizza,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077ee,2022-10-20,64a84fa9e321358b245076ab,Smoothie Bowl,Caprese Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077ef,2022-10-21,64a84fa9e321358b245076ab,Smoothie Bowl,Chicken Caesar Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077f0,2022-10-22,64a84fa9e321358b245076ab,Avocado Toast,Tuna Salad Sandwich,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077f1,2022-10-23,64a84fa9e321358b245076ab,Cereal with Milk,Quinoa Salad,Vegetable Lasagna
+64a84fa9e321358b245077f2,2022-10-24,64a84fa9e321358b245076ab,Cereal with Milk,Margherita Pizza,Vegetable Lasagna
+64a84fa9e321358b245077f3,2022-10-25,64a84fa9e321358b245076ab,Veggie Omelette,Mushroom Risotto,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b245077f4,2022-10-26,64a84fa9e321358b245076ab,Breakfast Burrito,Beef Stir-Fry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077f5,2022-10-27,64a84fa9e321358b245076ab,French Toast,Chicken Caesar Salad,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b245077f6,2022-10-28,64a84fa9e321358b245076ab,Avocado Toast,Grilled Chicken Wrap,Stir-Fried Beef with Broccoli
+64a84fa9e321358b245077f7,2022-10-29,64a84fa9e321358b245076ab,Avocado Toast,Margherita Pizza,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077f8,2022-10-30,64a84fa9e321358b245076ab,Scrambled Egg Toast,Caprese Salad,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b245077f9,2022-10-31,64a84fa9e321358b245076ab,Cereal with Milk,Margherita Pizza,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077fa,2022-11-01,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Caprese Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077fb,2022-11-02,64a84fa9e321358b245076ab,Scrambled Egg Toast,Grilled Chicken Wrap,Spaghetti Bolognese
+64a84fa9e321358b245077fc,2022-11-03,64a84fa9e321358b245076ab,French Toast,Pasta Primavera,Vegetable Lasagna
+64a84fa9e321358b245077fd,2022-11-04,64a84fa9e321358b245076ab,Fruit Salad,Margherita Pizza,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b245077fe,2022-11-05,64a84fa9e321358b245076ab,Yogurt Parfait,Beef Stir-Fry,Baked Chicken with Sweet Potato
+64a84fa9e321358b245077ff,2022-11-06,64a84fa9e321358b245076ab,Scrambled Egg Toast,Beef Stir-Fry,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507800,2022-11-07,64a84fa9e321358b245076ab,French Toast,Vegetable Curry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507801,2022-11-08,64a84fa9e321358b245076ab,French Toast,Mushroom Risotto,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507802,2022-11-09,64a84fa9e321358b245076ab,Scrambled Egg Toast,Vegetable Curry,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507803,2022-11-10,64a84fa9e321358b245076ab,French Toast,Margherita Pizza,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b24507804,2022-11-11,64a84fa9e321358b245076ab,Smoothie Bowl,Chicken Caesar Salad,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507805,2022-11-12,64a84fa9e321358b245076ab,Fruit Salad,Chicken Caesar Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507806,2022-11-13,64a84fa9e321358b245076ab,Cereal with Milk,Pasta Primavera,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507807,2022-11-14,64a84fa9e321358b245076ab,Scrambled Egg Toast,Grilled Chicken Wrap,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507808,2022-11-15,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Grilled Chicken Wrap,Vegetable Lasagna
+64a84fa9e321358b24507809,2022-11-16,64a84fa9e321358b245076ab,Veggie Omelette,Mushroom Risotto,Stir-Fried Beef with Broccoli
+64a84fa9e321358b2450780a,2022-11-17,64a84fa9e321358b245076ab,Avocado Toast,Quinoa Salad,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b2450780b,2022-11-18,64a84fa9e321358b245076ab,Yogurt Parfait,Vegetable Curry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450780c,2022-11-19,64a84fa9e321358b245076ab,Avocado Toast,Quinoa Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b2450780d,2022-11-20,64a84fa9e321358b245076ab,Veggie Omelette,Vegetable Curry,Vegetable Lasagna
+64a84fa9e321358b2450780e,2022-11-21,64a84fa9e321358b245076ab,Avocado Toast,Mushroom Risotto,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450780f,2022-11-22,64a84fa9e321358b245076ab,Cereal with Milk,Vegetable Curry,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507810,2022-11-23,64a84fa9e321358b245076ab,French Toast,Chicken Caesar Salad,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507811,2022-11-24,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Margherita Pizza,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b24507812,2022-11-25,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Tuna Salad Sandwich,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b24507813,2022-11-26,64a84fa9e321358b245076ab,Yogurt Parfait,Mushroom Risotto,Vegetable Lasagna
+64a84fa9e321358b24507814,2022-11-27,64a84fa9e321358b245076ab,Scrambled Egg Toast,Beef Stir-Fry,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b24507815,2022-11-28,64a84fa9e321358b245076ab,Smoothie Bowl,Grilled Chicken Wrap,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507816,2022-11-29,64a84fa9e321358b245076ab,Avocado Toast,Quinoa Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507817,2022-11-30,64a84fa9e321358b245076ab,Scrambled Egg Toast,Margherita Pizza,Vegetable Lasagna
+64a84fa9e321358b24507818,2022-12-01,64a84fa9e321358b245076ab,Breakfast Burrito,Caprese Salad,Spaghetti Bolognese
+64a84fa9e321358b24507819,2022-12-02,64a84fa9e321358b245076ab,Veggie Omelette,Tuna Salad Sandwich,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b2450781a,2022-12-03,64a84fa9e321358b245076ab,Cereal with Milk,Vegetable Curry,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b2450781b,2022-12-04,64a84fa9e321358b245076ab,Scrambled Egg Toast,Margherita Pizza,Spaghetti Bolognese
+64a84fa9e321358b2450781c,2022-12-05,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Baked Chicken with Sweet Potato
+64a84fa9e321358b2450781d,2022-12-06,64a84fa9e321358b245076ab,Fruit Salad,Caprese Salad,Lemon Herb Roasted Chicken with Quinoa
+64a84fa9e321358b2450781e,2022-12-07,64a84fa9e321358b245076ab,Avocado Toast,Vegetable Curry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450781f,2022-12-08,64a84fa9e321358b245076ab,Cereal with Milk,Margherita Pizza,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507820,2022-12-09,64a84fa9e321358b245076ab,Avocado Toast,Beef Stir-Fry,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b24507821,2022-12-10,64a84fa9e321358b245076ab,French Toast,Caprese Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507822,2022-12-11,64a84fa9e321358b245076ab,Breakfast Burrito,Caprese Salad,Beef Tacos with Salsa and Guacamole
+64a84fa9e321358b24507823,2022-12-12,64a84fa9e321358b245076ab,Fruit Salad,Tuna Salad Sandwich,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507824,2022-12-13,64a84fa9e321358b245076ab,Smoothie Bowl,Tuna Salad Sandwich,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507825,2022-12-14,64a84fa9e321358b245076ab,Fruit Salad,Margherita Pizza,Baked Chicken with Sweet Potato
+64a84fa9e321358b24507826,2022-12-15,64a84fa9e321358b245076ab,Yogurt Parfait,Grilled Chicken Wrap,Spaghetti Bolognese
+64a84fa9e321358b24507827,2022-12-16,64a84fa9e321358b245076ab,Scrambled Egg Toast,Chicken Caesar Salad,Spaghetti Bolognese
+64a84fa9e321358b24507828,2022-12-17,64a84fa9e321358b245076ab,French Toast,Tuna Salad Sandwich,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b24507829,2022-12-18,64a84fa9e321358b245076ab,Avocado Toast,Tuna Salad Sandwich,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b2450782a,2022-12-19,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Chicken Caesar Salad,Shrimp Scampi with Garlic Bread
+64a84fa9e321358b2450782b,2022-12-20,64a84fa9e321358b245076ab,Scrambled Egg Toast,Grilled Chicken Wrap,Baked Chicken with Sweet Potato
+64a84fa9e321358b2450782c,2022-12-21,64a84fa9e321358b245076ab,Smoothie Bowl,Beef Stir-Fry,Mushroom and Spinach Stuffed Bell Peppers
+64a84fa9e321358b2450782d,2022-12-22,64a84fa9e321358b245076ab,Breakfast Burrito,Beef Stir-Fry,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b2450782e,2022-12-23,64a84fa9e321358b245076ab,Pancakes with Maple Syrup,Grilled Chicken Wrap,Baked Chicken with Sweet Potato
+64a84fa9e321358b2450782f,2022-12-24,64a84fa9e321358b245076ab,French Toast,Grilled Chicken Wrap,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507830,2022-12-25,64a84fa9e321358b245076ab,Fruit Salad,Quinoa Salad,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507831,2022-12-26,64a84fa9e321358b245076ab,Fruit Salad,Pasta Primavera,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507832,2022-12-27,64a84fa9e321358b245076ab,Veggie Omelette,Quinoa Salad,Stir-Fried Beef with Broccoli
+64a84fa9e321358b24507833,2022-12-28,64a84fa9e321358b245076ab,Yogurt Parfait,Mushroom Risotto,Spaghetti Bolognese
+64a84fa9e321358b24507834,2022-12-29,64a84fa9e321358b245076ab,Avocado Toast,Quinoa Salad,Vegetarian Stir-Fry with Tofu
+64a84fa9e321358b24507835,2022-12-30,64a84fa9e321358b245076ab,Smoothie Bowl,Caprese Salad,Grilled Salmon with Roasted Vegetables
+64a84fa9e321358b24507836,2022-12-31,64a84fa9e321358b245076ab,Yogurt Parfait,Mushroom Risotto,Lemon Herb Roasted Chicken with Quinoa

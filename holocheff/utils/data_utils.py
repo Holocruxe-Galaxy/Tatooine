@@ -4,54 +4,66 @@ from pymongo import MongoClient
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
-# Traer los datos de la base de datos y crear un dataframe .csv
 
-
-def import_data():
-    # Connect to MongoDB
-    client = MongoClient('mongodb://localhost:27017/')
-    database = client['holocheff_db_test']
-    collection = database['meals']
-
-    # Query the data from MongoDB
-    # You can customize the query as per your requirements
-    data = collection.find({})
-
-    # Convert MongoDB data to pandas DataFrame
-    dataframe = pd.DataFrame(list(data))
-
-    # Convert DataFrame to CSV
-    dataframe.to_csv('data/dataframe.csv', index=False)
-
-
+# Import the data from MongoDB and save it as a CSV file
 def get_dataframe():
-    dataframe = pd.read_csv('data/dataframe.csv')
-    return dataframe
+    try:
+        # Connect to MongoDB
+        client = MongoClient('mongodb://localhost:27017/')
+        database = client['holocheff_db_test']
+        collection = database['meals']
 
-# Formateamos el dataframe para poder utilizarlo en el modelo
+        # Query the data from MongoDB
+        data = collection.find({})
+
+        # Convert MongoDB data to pandas DataFrame
+        dataframe = pd.DataFrame(list(data))
+
+        # Format the data
+        format_data()
+        return dataframe
+    except Exception as e:
+        print("An error occurred while retrieving the data:", str(e))
 
 
+# Format the data and save it as a CSV file
 def format_data():
-   # Encode the categorical features
-    dataframe = get_dataframe()
-    label_encoder = LabelEncoder()
-    dataframe['breakfast'] = label_encoder.fit_transform(
-        dataframe['breakfast'])
-    dataframe['lunch'] = label_encoder.fit_transform(dataframe['lunch'])
-    dataframe['dinner'] = label_encoder.fit_transform(dataframe['dinner'])
-    dataframe.to_csv('data/dataframe.csv', index=False)
+    try:
+        # Get the data from the CSV file
+        dataframe = get_dataframe()
+        label_encoder = LabelEncoder()
+
+        # Encode the categorical features
+        dataframe['breakfast'] = label_encoder.fit_transform(dataframe['breakfast'])
+        dataframe['lunch'] = label_encoder.fit_transform(dataframe['lunch'])
+        dataframe['dinner'] = label_encoder.fit_transform(dataframe['dinner']) 
+              
+        print("Data formatted.")
+        return dataframe
+    except Exception as e:
+        print("An error occurred during data formatting:", str(e))
+
+# Convert the dataframe to a CSV file for testing
+def convert_to_csv():
+    try:
+        # Get the data from the CSV file
+        dataframe = get_dataframe()
+        # Save the data as a CSV file
+        dataframe.to_csv('data/dataframe.csv', index=False)
+        print("Data saved for testing in dataframe.csv.")
+    except Exception as e:
+        print("An error occurred while converting the data to a CSV file:", str(e))
 
 
-# funcion para devolver el dataframe de entrenamiento
+# Get the training and eval data from the DataFrame as a tuple
 def get_training_data():
-    dataframe = get_dataframe()
-    train_data, _ = train_test_split(
-        dataframe, train_size=0.7, random_state=42)
-    return train_data
-
-
-# funcion para devolver el dataframe de testeo
-def get_testing_data():
-    dataframe = get_dataframe()
-    _, test_data = train_test_split(dataframe, test_size=0.3, random_state=42)
-    return test_data
+    try:
+        dataframe = get_dataframe()
+        # Split the data into training and eval sets
+        training_set, eval_set = train_test_split(dataframe, test_size=0.2, random_state=0)
+        # Convert the data into a tuple
+        training_tuple = (training_set, eval_set)
+        return training_tuple
+    except Exception as e:
+        print("An error occurred while retrieving the training data:", str(e))
+        return None

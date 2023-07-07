@@ -1,6 +1,7 @@
 import data_utils
 import tensorflow as tf
 
+#Create input function for training + evaluating
 def make_input(data_df, label_df, num_epochs=500, shuffle=True, batch_size=32):
     def input_function():  # inner function, this will be returned
         # create tf.data.Dataset object with data and its label
@@ -12,13 +13,19 @@ def make_input(data_df, label_df, num_epochs=500, shuffle=True, batch_size=32):
         return ds  # return a batch of the dataset
     return input_function  # return a function object for use
 
-# entrenar el modelo trayendo el dataframe.csv
-def train_model():
-    pass
-# guardar el modelo en un archivo .h5
-def save_model():
-    pass
-# # crear checkpoint para el modelo
-
+#Create the model using Logistic Regression
+def create_model(my_learning_rate, feature_layer):
+    # Most simple tf.keras models are sequential.
+    model = tf.keras.models.Sequential()
+    # Add the layer containing the feature columns to the model.
+    model.add(feature_layer)
+    # Add one linear layer to the model to yield a simple linear regressor.
+    model.add(tf.keras.layers.Dense(units=1, input_shape=(1,),
+                                    activation=tf.sigmoid),)
+    # Construct the layers into a model that TensorFlow can execute.
+    model.compile(optimizer=tf.keras.optimizers.RMSprop(lr=my_learning_rate),
+                    loss="binary_crossentropy",
+                    metrics=[tf.keras.metrics.BinaryAccuracy()])
+    return model
 
 

@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 import random
+from datetime import datetime, timedelta
 
 client = MongoClient('mongodb://localhost:27017/')
 db_name = 'holocheff_db_test'
@@ -147,13 +148,16 @@ breakfasts = [food["name"] for food in foods if food["type"] == "breakfast"]
 lunches = [food["name"] for food in foods if food["type"] == "lunch"]
 dinners = [food["name"] for food in foods if food["type"] == "dinner"]
 
-for day in range(1, 31):
+# for each day this year generate a random meal
+start_date = datetime(2022, 1, 1)
+for day in range(1, 366):
+    current_date = start_date + timedelta(days=day-1)  # Calculate the current date
     breakfast = random.choice(breakfasts)
     lunch = random.choice(lunches)
-    dinner = random.choice(dinners)
+    dinner = random.choice(dinners)   
 
     meal = {
-        "day": day,
+        "date": current_date.strftime("%Y-%m-%d"),
         "user_id": user_id,
         "breakfast": breakfast,
         "lunch": lunch,
