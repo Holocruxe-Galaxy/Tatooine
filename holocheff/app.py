@@ -1,3 +1,5 @@
-from utils import data_utils, model_utils, feature_utils, view_utils
+from utils import data_utils
 
-data_utils.convert_to_csv()
+# show in jypter notebook the dataframe
+dataframe = data_utils.get_dataframe()
+dataframe.head()
