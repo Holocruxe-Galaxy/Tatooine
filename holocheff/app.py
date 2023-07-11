@@ -1,5 +1,8 @@
-from utils import data_utils
+from utils import data_utils, model_utils
 
-# show in jypter notebook the dataframe
-dataframe = data_utils.get_dataframe()
-dataframe.head()
+def main():
+    data_utils.test()
+    model_utils.test()
+
+if __name__ == "__main__":
+    main()
