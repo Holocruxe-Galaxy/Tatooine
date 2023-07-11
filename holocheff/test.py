@@ -72,7 +72,9 @@ predictions = list(linear_est.predict(eval_input_fn))
 # clear the notebook
 from IPython.display import clear_output
 clear_output(wait=True)
+#print accuracy
+print(result['accuracy'])
 # print the next breakfast as a string
-print("The next breakfast is: ", label_encoder.inverse_transform([predictions[0]['class_ids'][0]]))
+# print("The next breakfast is: ", label_encoder.inverse_transform([predictions[0]['class_ids'][0]]))
 
 # %%
