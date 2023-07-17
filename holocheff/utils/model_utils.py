@@ -1,5 +1,5 @@
 import tensorflow as tf
-
+from sklearn import linear_model
 # Create input functions for training and evaluation
 def generate_input(dataframe, labels, batch_size=32, num_epochs=None, shuffle=True):
     def input_function():  # inner function, this will be returned
