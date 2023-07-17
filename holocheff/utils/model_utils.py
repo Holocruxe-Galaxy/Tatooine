@@ -9,7 +9,6 @@ def train_model():
 # guardar el modelo en un archivo .h5
 def save_model():
     pass
-
 # # crear checkpoint para el modelo
 
 
