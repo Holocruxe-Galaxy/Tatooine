@@ -15,18 +15,18 @@ for _ in range(num_data_points):
     weather = fake.random_element(elements=("sunny", "rainy", "cloudy"))
     location = fake.random_element(elements=("home", "office", "restaurant"))
 
-    # Generate breakfast, lunch, and dinner
+    # Generate breakfast and non-breakfast meals
     breakfast = fake.random_element(elements=("cereal", "toast", "oatmeal", "pancakes", "smoothie"))
-    lunch = fake.random_element(elements=("sandwich", "pizza", "salad"))
-    dinner = fake.random_element(elements=("soup", "steak", "sushi", "pasta"))
+    non_breakfast_meals = [fake.random_element(elements=("sandwich", "pizza", "salad", "soup", "steak", "sushi", "pasta"))
+                           for _ in range(2)]
+
+    foods = [breakfast] + non_breakfast_meals
 
     data.append({
         "date": current_date,
         "weather": weather,
         "location": location,
-        "breakfast": breakfast,
-        "lunch": lunch,
-        "dinner": dinner
+        "foods": foods
     })
 
     # Increment the date for the next iteration

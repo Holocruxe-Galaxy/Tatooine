@@ -1,32 +1,29 @@
-import sys
-from IPython.core.ultratb import ColorTB
-sys.excepthook = ColorTB()
+from utils import data_utils
+import pandas as pd
+import datetime
 
-from utils import data_utils, model_utils
-# get the data
-dataframe = data_utils.get_dataframe()
+# Preprocess the data using the format_data function
+preprocessed_data = data_utils.get_dataframe()
+preprocessed_data = data_utils.format_data(preprocessed_data)
 
-# get training and evaluation data
-train_dataframe, eval_dataframe, train_label, eval_label = data_utils.get_training_data(dataframe, 'breakfast')
+if preprocessed_data is not None:
+    # Encode the datetime feature
+    preprocessed_data['day_of_week'] = pd.to_datetime(preprocessed_data['date']).dt.dayofweek
 
-print(train_dataframe.head())
-print(eval_dataframe.head())
-# generate the input functions
-train_input = model_utils.generate_input(train_dataframe, train_label, num_epochs=10, shuffle=True)
-eval_input = model_utils.generate_input(eval_dataframe, eval_label, num_epochs=1, shuffle=False)
+    # Get the current local time
+    current_time = datetime.datetime.now()
+    current_day_of_week = current_time.weekday()
 
-# get the number of classes in breakfast column
-n_classes = len(dataframe['breakfast'].unique())
+    # Filter the data based on the current day of the week and select the most recent entry
+    filtered_data = preprocessed_data[preprocessed_data['day_of_week'] == current_day_of_week]
+    filtered_data = filtered_data.iloc[[-1]]
 
-# create the model
-model = model_utils.create_linear_estimator(['date', 'lunch', 'dinner'], n_classes)
+    # Get the name of the next foods
+    foods = filtered_data['foods'].values[0]
 
-# #save model
-# model.save('model.h5')
-
-# train and evaluate the model
-print(type(train_input))
-print(type(eval_input))
-
-result = model_utils.train(model, train_input, eval_input)
-
+    # Print the next foods
+    print("Next Foods:")
+    for food in foods:
+        print(food)
+else:
+    print("No data found.")
