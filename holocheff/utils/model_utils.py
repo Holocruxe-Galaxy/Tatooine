@@ -62,3 +62,7 @@ def predict(model, eval_input):
     except Exception as e:
         print("\033[91m" + "An error occurred while getting predictions from the model:", str(e) + "\033[0m")
         return None
+
+#ssave
+
+#crear ciclo antes del desarrollo cucumber tdd bdd ddd pytest spikeypython 

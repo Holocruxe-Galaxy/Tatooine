@@ -21,6 +21,9 @@ n_classes = len(dataframe['breakfast'].unique())
 # create the model
 model = model_utils.create_linear_estimator(['date', 'lunch', 'dinner'], n_classes)
 
+#save model
+model.save('model.h5')
+
 # train and evaluate the model
 print(type(train_input))
 print(type(eval_input))
