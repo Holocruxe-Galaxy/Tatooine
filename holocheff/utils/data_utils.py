@@ -1,5 +1,6 @@
 import pandas as pd
 import tensorflow as tf
+import pymongo
 from pymongo import MongoClient
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
@@ -30,7 +31,7 @@ def get_dataframe():
 def format_data(dataframe):
     try:
         print("\033[93m" + "Formatting the data..." + "\033[0m")
-        # Remove the _id and user_id columns
+        # Remove the _id column
         dataframe = dataframe.drop(columns=['_id'])
 
         label_encoder = LabelEncoder()
@@ -38,11 +39,13 @@ def format_data(dataframe):
         # Encode the categorical features
         dataframe['weather'] = label_encoder.fit_transform(dataframe['weather'])
         dataframe['location'] = label_encoder.fit_transform(dataframe['location'])
-        dataframe['foods'] = label_encoder.fit_transform(dataframe['foods'])
+        dataframe['breakfast'] = label_encoder.fit_transform(dataframe['breakfast'])
+        dataframe['lunch'] = label_encoder.fit_transform(dataframe['lunch'])
+        dataframe['dinner'] = label_encoder.fit_transform(dataframe['dinner'])
 
         # Add day of the week
         dataframe['day_of_week'] = pd.to_datetime(dataframe['date']).dt.dayofweek
-
+        dataframe = dataframe.drop(columns=['date'])
         print("\033[92m" + "Data successfully formatted!" + "\033[0m")
         return dataframe
 
@@ -89,6 +92,17 @@ def convert_to_csv(df, filename):
     except Exception as e:
         print("\033[91m" + "An error occurred while converting the DataFrame to a CSV file:", str(e) + "\033[0m")
         return None
+    
+def get_meal_name(dataframe, meal_id):
+    try:
+        print("\033[93m" + "Getting the meal name..." + "\033[0m")
+        meal_name = dataframe['name'][meal_id]
+        print("\033[92m" + "Successfully got the meal name!" + "\033[0m")
+        return meal_name
+    except Exception as e:
+        print("\033[91m" + "An error occurred while getting the meal name:", str(e) + "\033[0m")
+        return None
+   
 
 
     
