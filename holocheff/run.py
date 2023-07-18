@@ -25,6 +25,16 @@ labels = model_utils.get_labels(dataset, predict)
 features_train, features_evaluation, labels_train, labels_evaluation = model_utils.split_data(features, labels)
 
 for user in users:
+    # Check if the user has a model
+    if model_utils.check_model(user):
+        # Load the model
+        model = model_utils.load_model(f'models/{user}_holocheff.pkl')
+        # Predict the next meal
+        prediction = model_utils.predict_next_meal(model, features_evaluation)
+        # Print the next meal
+        print(prediction[-1][0])
+        # Continue to the next user
+        continue
     # Create a model
     model = model_utils.create_model()
     # Initial training
@@ -47,5 +57,5 @@ prediction = model_utils.predict_next_meal(model, features_evaluation)
 # Print accuracy in percentage
 # print(model.score(features_evaluation, labels_evaluation) * 100)
 
-# Print the next meal
+# Print the next meal for each user
 # print(prediction[-1][0])

@@ -6,7 +6,7 @@ import pymongo
 fake = Faker()
 
 # Generate synthetic user data
-num_users = 50  # Number of synthetic users to generate
+num_users = 1000  # Number of synthetic users to generate
 
 users = []
 for _ in range(num_users):

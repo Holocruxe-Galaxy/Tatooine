@@ -32,3 +32,16 @@ def predict_next_meal(model, features_evaluation):
 def save_model(model, path):
     with open(path, 'wb') as f:
         pickle.dump(model, f)
+
+# Check if the user has a model
+def check_model(user):
+    try:
+        with open(f'models/{user}_holocheff.pkl', 'rb') as f:
+            return True
+    except:
+        return False
+
+# Load the model
+def load_model(path):
+    with open(path, 'rb') as f:
+        return pickle.load(f)
