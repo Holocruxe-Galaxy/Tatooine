@@ -1,46 +1,51 @@
 import pandas as pd
 import numpy as np
 import pickle
-
 from sklearn.linear_model import LinearRegression
-
 from sklearn.model_selection import train_test_split
-from utils import data_utils
-import datetime
+from utils import data_utils, model_utils
 
 # Get the data
-data = data_utils.get_dataframe()
+data = data_utils.get_data()
+
+# Get the users
+users = data['user_id'].unique()
+
 # Format the data
-data = data_utils.format_data(data)
+dataset = data_utils.format_data(data)
 
 # Get the predict columns
 predict = ['breakfast', 'lunch', 'dinner']
 
 # Convert data to numpy array and drop the predict columns
-features = np.array(data.drop(predict, axis=1))
-labels = np.array(data[predict])
+features =  model_utils.get_features(dataset, predict)
+labels = model_utils.get_labels(dataset, predict)
 
 # Split the data into training and testing sets
-features_train, features_evaluation, labels_train, labels_evaluation = train_test_split(features, labels, test_size=0.3)
+features_train, features_evaluation, labels_train, labels_evaluation = model_utils.split_data(features, labels)
 
-# Create the model
-model = LinearRegression()
+for user in users:
+    # Create a model
+    model = model_utils.create_model()
+    # Initial training
+    model = model_utils.train_model(model, features_train, labels_train)    
+    # Save the model
+    model_utils.save_model(model, f'models/{user}_holocheff.pkl')
 
-# Train the model
-model.fit(features_train, labels_train)
+
+
 
 # Predict the next meal
-labels_prediction = model.predict(features_evaluation)
+prediction = model_utils.predict_next_meal(model, features_evaluation)
 
-# Save the model
-with open('models/model.pkl', 'wb') as f:
-    pickle.dump(model, f)
+
+
 
 # # Load the model
 # model = pickle.load(open('model.pkl', 'rb'))
 
 # Print accuracy in percentage
-print(model.score(features_evaluation, labels_evaluation) * 100)
+# print(model.score(features_evaluation, labels_evaluation) * 100)
 
 # Print the next meal
-print(labels_prediction[-1][0])
+# print(prediction[-1][0])
