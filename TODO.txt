@@ -1,1 +1,2 @@
--Modify training function to check if data has changed
+- Modify training function to check if data has changed
+- Improve the models accuracy
