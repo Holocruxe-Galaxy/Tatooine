@@ -32,7 +32,7 @@ def format_data(dataframe):
     try:
         print("\033[93m" + "Formatting the data..." + "\033[0m")
         # Remove the _id column
-        dataframe = dataframe.drop(columns=['_id'])
+        dataframe = dataframe.drop(columns=['_id','user_id'])
 
         label_encoder = LabelEncoder()
 
@@ -94,14 +94,7 @@ def convert_to_csv(df, filename):
         return None
     
 def get_meal_name(dataframe, meal_id):
-    try:
-        print("\033[93m" + "Getting the meal name..." + "\033[0m")
-        meal_name = dataframe['name'][meal_id]
-        print("\033[92m" + "Successfully got the meal name!" + "\033[0m")
-        return meal_name
-    except Exception as e:
-        print("\033[91m" + "An error occurred while getting the meal name:", str(e) + "\033[0m")
-        return None
+    
    
 
 
