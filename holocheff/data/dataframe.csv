@@ -1,31 +1,31 @@
 _id,day,user_id,breakfast,lunch,dinner
-64a551f4134bfeedd5f0f2ae,1,64a551f4134bfeedd5f0f28f,Cereal with Milk,Grilled Chicken Wrap,Mushroom and Spinach Stuffed Bell Peppers
-64a551f4134bfeedd5f0f2af,2,64a551f4134bfeedd5f0f28f,Scrambled Egg Toast,Chicken Caesar Salad,Baked Chicken with Sweet Potato
-64a551f4134bfeedd5f0f2b0,3,64a551f4134bfeedd5f0f28f,Pancakes with Maple Syrup,Margherita Pizza,Grilled Salmon with Roasted Vegetables
-64a551f4134bfeedd5f0f2b1,4,64a551f4134bfeedd5f0f28f,Pancakes with Maple Syrup,Pasta Primavera,Grilled Salmon with Roasted Vegetables
-64a551f4134bfeedd5f0f2b2,5,64a551f4134bfeedd5f0f28f,Avocado Toast,Tuna Salad Sandwich,Grilled Salmon with Roasted Vegetables
-64a551f4134bfeedd5f0f2b3,6,64a551f4134bfeedd5f0f28f,Fruit Salad,Chicken Caesar Salad,Lemon Herb Roasted Chicken with Quinoa
-64a551f4134bfeedd5f0f2b4,7,64a551f4134bfeedd5f0f28f,Cereal with Milk,Beef Stir-Fry,Grilled Salmon with Roasted Vegetables
-64a551f4134bfeedd5f0f2b5,8,64a551f4134bfeedd5f0f28f,Yogurt Parfait,Chicken Caesar Salad,Grilled Salmon with Roasted Vegetables
-64a551f4134bfeedd5f0f2b6,9,64a551f4134bfeedd5f0f28f,Breakfast Burrito,Pasta Primavera,Beef Tacos with Salsa and Guacamole
-64a551f4134bfeedd5f0f2b7,10,64a551f4134bfeedd5f0f28f,Avocado Toast,Caprese Salad,Lemon Herb Roasted Chicken with Quinoa
-64a551f4134bfeedd5f0f2b8,11,64a551f4134bfeedd5f0f28f,Breakfast Burrito,Margherita Pizza,Vegetable Lasagna
-64a551f4134bfeedd5f0f2b9,12,64a551f4134bfeedd5f0f28f,Avocado Toast,Caprese Salad,Vegetarian Stir-Fry with Tofu
-64a551f4134bfeedd5f0f2ba,13,64a551f4134bfeedd5f0f28f,Fruit Salad,Chicken Caesar Salad,Shrimp Scampi with Garlic Bread
-64a551f4134bfeedd5f0f2bb,14,64a551f4134bfeedd5f0f28f,Yogurt Parfait,Pasta Primavera,Mushroom and Spinach Stuffed Bell Peppers
-64a551f4134bfeedd5f0f2bc,15,64a551f4134bfeedd5f0f28f,Yogurt Parfait,Mushroom Risotto,Beef Tacos with Salsa and Guacamole
-64a551f4134bfeedd5f0f2bd,16,64a551f4134bfeedd5f0f28f,Smoothie Bowl,Caprese Salad,Baked Chicken with Sweet Potato
-64a551f4134bfeedd5f0f2be,17,64a551f4134bfeedd5f0f28f,Smoothie Bowl,Grilled Chicken Wrap,Baked Chicken with Sweet Potato
-64a551f4134bfeedd5f0f2bf,18,64a551f4134bfeedd5f0f28f,Yogurt Parfait,Quinoa Salad,Spaghetti Bolognese
-64a551f4134bfeedd5f0f2c0,19,64a551f4134bfeedd5f0f28f,Breakfast Burrito,Margherita Pizza,Vegetable Lasagna
-64a551f4134bfeedd5f0f2c1,20,64a551f4134bfeedd5f0f28f,Breakfast Burrito,Margherita Pizza,Grilled Salmon with Roasted Vegetables
-64a551f4134bfeedd5f0f2c2,21,64a551f4134bfeedd5f0f28f,Veggie Omelette,Tuna Salad Sandwich,Baked Chicken with Sweet Potato
-64a551f4134bfeedd5f0f2c3,22,64a551f4134bfeedd5f0f28f,Cereal with Milk,Grilled Chicken Wrap,Grilled Salmon with Roasted Vegetables
-64a551f4134bfeedd5f0f2c4,23,64a551f4134bfeedd5f0f28f,Pancakes with Maple Syrup,Margherita Pizza,Spaghetti Bolognese
-64a551f4134bfeedd5f0f2c5,24,64a551f4134bfeedd5f0f28f,Cereal with Milk,Grilled Chicken Wrap,Stir-Fried Beef with Broccoli
-64a551f4134bfeedd5f0f2c6,25,64a551f4134bfeedd5f0f28f,Smoothie Bowl,Quinoa Salad,Beef Tacos with Salsa and Guacamole
-64a551f4134bfeedd5f0f2c7,26,64a551f4134bfeedd5f0f28f,Yogurt Parfait,Chicken Caesar Salad,Mushroom and Spinach Stuffed Bell Peppers
-64a551f4134bfeedd5f0f2c8,27,64a551f4134bfeedd5f0f28f,Veggie Omelette,Quinoa Salad,Lemon Herb Roasted Chicken with Quinoa
-64a551f4134bfeedd5f0f2c9,28,64a551f4134bfeedd5f0f28f,Cereal with Milk,Beef Stir-Fry,Spaghetti Bolognese
-64a551f4134bfeedd5f0f2ca,29,64a551f4134bfeedd5f0f28f,Cereal with Milk,Grilled Chicken Wrap,Lemon Herb Roasted Chicken with Quinoa
-64a551f4134bfeedd5f0f2cb,30,64a551f4134bfeedd5f0f28f,Avocado Toast,Beef Stir-Fry,Spaghetti Bolognese
+64a551f4134bfeedd5f0f2ae,1,64a551f4134bfeedd5f0f28f,2,3,4
+64a551f4134bfeedd5f0f2af,2,64a551f4134bfeedd5f0f28f,5,2,0
+64a551f4134bfeedd5f0f2b0,3,64a551f4134bfeedd5f0f28f,4,4,2
+64a551f4134bfeedd5f0f2b1,4,64a551f4134bfeedd5f0f28f,4,6,2
+64a551f4134bfeedd5f0f2b2,5,64a551f4134bfeedd5f0f28f,0,8,2
+64a551f4134bfeedd5f0f2b3,6,64a551f4134bfeedd5f0f28f,3,2,3
+64a551f4134bfeedd5f0f2b4,7,64a551f4134bfeedd5f0f28f,2,0,2
+64a551f4134bfeedd5f0f2b5,8,64a551f4134bfeedd5f0f28f,8,2,2
+64a551f4134bfeedd5f0f2b6,9,64a551f4134bfeedd5f0f28f,1,6,1
+64a551f4134bfeedd5f0f2b7,10,64a551f4134bfeedd5f0f28f,0,1,3
+64a551f4134bfeedd5f0f2b8,11,64a551f4134bfeedd5f0f28f,1,4,8
+64a551f4134bfeedd5f0f2b9,12,64a551f4134bfeedd5f0f28f,0,1,9
+64a551f4134bfeedd5f0f2ba,13,64a551f4134bfeedd5f0f28f,3,2,5
+64a551f4134bfeedd5f0f2bb,14,64a551f4134bfeedd5f0f28f,8,6,4
+64a551f4134bfeedd5f0f2bc,15,64a551f4134bfeedd5f0f28f,8,5,1
+64a551f4134bfeedd5f0f2bd,16,64a551f4134bfeedd5f0f28f,6,1,0
+64a551f4134bfeedd5f0f2be,17,64a551f4134bfeedd5f0f28f,6,3,0
+64a551f4134bfeedd5f0f2bf,18,64a551f4134bfeedd5f0f28f,8,7,6
+64a551f4134bfeedd5f0f2c0,19,64a551f4134bfeedd5f0f28f,1,4,8
+64a551f4134bfeedd5f0f2c1,20,64a551f4134bfeedd5f0f28f,1,4,2
+64a551f4134bfeedd5f0f2c2,21,64a551f4134bfeedd5f0f28f,7,8,0
+64a551f4134bfeedd5f0f2c3,22,64a551f4134bfeedd5f0f28f,2,3,2
+64a551f4134bfeedd5f0f2c4,23,64a551f4134bfeedd5f0f28f,4,4,6
+64a551f4134bfeedd5f0f2c5,24,64a551f4134bfeedd5f0f28f,2,3,7
+64a551f4134bfeedd5f0f2c6,25,64a551f4134bfeedd5f0f28f,6,7,1
+64a551f4134bfeedd5f0f2c7,26,64a551f4134bfeedd5f0f28f,8,2,4
+64a551f4134bfeedd5f0f2c8,27,64a551f4134bfeedd5f0f28f,7,7,3
+64a551f4134bfeedd5f0f2c9,28,64a551f4134bfeedd5f0f28f,2,0,6
+64a551f4134bfeedd5f0f2ca,29,64a551f4134bfeedd5f0f28f,2,3,3
+64a551f4134bfeedd5f0f2cb,30,64a551f4134bfeedd5f0f28f,0,0,6
