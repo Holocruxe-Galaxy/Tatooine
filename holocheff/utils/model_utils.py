@@ -51,7 +51,7 @@ y = np.column_stack((breakfast, lunch, dinner))
 y = y.astype(int)
 
 # Entrenar el modelo
-model.fit(X, y, epochs=1000)
+model.fit(X, y, epochs=500)
 
 # Guardar el modelo en un archivo .h5
 model_file = os.path.join(current_dir, 'modelo_entrenado.h5')
