@@ -4,4 +4,4 @@ sklearn
 pymongo
 numpy
 faker
-
+colorlog
