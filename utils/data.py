@@ -10,7 +10,7 @@ logger = debug_utils.logger
 # Import the data from MongoDB and convert it to a pandas DataFrame
 def get_data():
     try:
-        logger.debug("Getting the data...", extra={'color': '93'})
+        logger.debug("Getting data...", extra={'color': '93'})
         # Connect to MongoDB
         client = MongoClient('mongodb://localhost:27017/')
         database = client['holocheff_db']
@@ -32,7 +32,7 @@ def get_data():
 # Format the data
 def format_data(dataframe):
     try:
-        logger.debug("Formatting the data...", extra={'color': '93'})
+        logger.debug("Formatting data...", extra={'color': '93'})
         # Remove the _id column
         dataframe = dataframe.drop(columns=['_id','user_id'])
 

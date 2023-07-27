@@ -1,6 +1,6 @@
 import sys
 from utils import data as data_utils, model as model_utils, debug as debug_utils
-
+import sklearn
 logger = debug_utils.logger
 
 
@@ -27,24 +27,18 @@ for user_id in users:
     # Check if the user has a model
     if model_utils.check_model(user_id):
         # Load the model
-        model = model_utils.load_model(f'models/{user_id}_holocheff.pkl')
-        # Predict the next meal
-        prediction = model_utils.predict_next_meal(model, features_evaluation)
-        # Print the next meal
-        logger.info(prediction[-1][0])
-        # Continue to the next user
-        continue
+        model = model_utils.load_model(f'models/{user_id}_holocheff.pkl')  
+    else:        
+        # Create a model
+        model = model_utils.create_model()
 
-    # Create a model
-    model = model_utils.create_model()
+        # Initial training
+        model = model_utils.train_model(model, features_train, labels_train)
 
-    # Initial training
-    model = model_utils.train_model(model, features_train, labels_train)
-
+     # show model accuracy
+    model.score(features_evaluation, labels_evaluation)
     # Save the model
     model_utils.save_model(model, f'models/{user_id}_holocheff.pkl')
 
-    # Predict the next meal
-    prediction = model_utils.predict_next_meal(model, features_evaluation)
-    logger.info(prediction[-1][0])
-
+   
+    
