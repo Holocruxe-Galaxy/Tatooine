@@ -1,7 +1,6 @@
 pandas
-tensorflow
-sklearn
-pymongo
+scikit-learn
 numpy
-faker
+pymongo
 colorlog
+

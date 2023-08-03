@@ -1,5 +1,4 @@
 import pandas as pd
-import pymongo
 from pymongo import MongoClient
 from sklearn.preprocessing import LabelEncoder
 
