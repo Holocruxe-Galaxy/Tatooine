@@ -42,7 +42,7 @@ def split_data(features, labels, test_size=0.3):
         return None, None, None, None
 
 # Create a model
-def create_model():
+def define_model():
     try:
         model = DecisionTreeClassifier()
         return model
@@ -107,6 +107,15 @@ def load_model(path):
         logger.error(f"Error occurred: {e}", extra={'color': '91'})
         return None
 
+def evaluate_model(model, features_evaluation, labels_evaluation):
+    try:
+        logger.debug("Evaluating model...", extra={'color': '93'})
+        # Get the accuracy score as a percentage
+        score = model.score(features_evaluation, labels_evaluation) * 100
+        # if score < 40 color red if score > 40 and < 70 color yellow if score > 70 color green
+        logger.info(f"Model accuracy: {score}", extra={'color': '92'})
+    except Exception as e:
+        logger.error(f"Error occurred: {e}", extra={'color': '91'})
 # Check if the user has a model
 def check_model(user):
     try:        
