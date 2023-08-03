@@ -62,3 +62,4 @@ for i in range(1, 365):
             })      
 
 holocheff_data_collection.insert_many(data)
+print('Data inserted successfully')
