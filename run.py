@@ -1,17 +1,10 @@
-from utils import debug_utils as debug_utils
-from utils import data_utils as data_utils
-import model
+from utils import debug_utils
+from utils.data_utils import Data
+from utils.model_utils import Model
 
 logger = debug_utils.logger
 
-
-# Get the data
-data = data_utils.get_data()
-
-# Format the data
-data = data_utils.format_data_OneHotEncoder(data)
-
-
-model = model.ModelUtils(data, 'food')
-
-
+# Create the Data instance with the OneHotEncoder encoding type
+data = Data(encoder="label_encoder")
+model = Model(data.dataframe, 'food')
+model.evaluate_model(model.features_evaluation, model.labels_evaluation)
