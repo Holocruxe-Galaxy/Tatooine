@@ -1,6 +1,7 @@
+# model_utils.py
 import numpy as np
 import pickle
-from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 
 from utils import debug_utils as debug_utils
@@ -43,11 +44,12 @@ def split_data(features, labels, test_size=0.3):
 # Create a model
 def create_model():
     try:
-        model = LinearRegression()
+        model = DecisionTreeClassifier()
         return model
     except Exception as e:
         logger.error(f"Error occurred: {e}", extra={'color': '91'})
         return None
+
 
 # Train the model
 def train_model(model, features_train, labels_train):
