@@ -1,3 +1,4 @@
+import pymongo
 import pandas as pd
 from pymongo import MongoClient
 from sklearn.preprocessing import LabelEncoder
@@ -6,18 +7,21 @@ from utils import debug as debug_utils
 
 logger = debug_utils.logger
 
+def mongodb_connection():
+    client = pymongo.MongoClient("mongodb+srv://fierrof47:qR4didvGr1qWJ9YK@testcluster.m7ynzx9.mongodb.net/")
+    db = client["holocheff_db"]
+    return db
+
 # Import the data from MongoDB and convert it to a pandas DataFrame
 def get_data():
     try:
         logger.debug("Getting data...", extra={'color': '93'})
         # Connect to MongoDB
-        client = MongoClient('mongodb://localhost:27017/')
-        database = client['holocheff_db']
-        collection = database['meals']
-
-        # Query the data from MongoDB
-        data = collection.find({})
-
+   
+        database = mongodb_connection()
+        # Get meals data from data collection
+        data = database["data"].find({}, {"meal": 1, "_id": 0})
+        
         # Convert MongoDB data to pandas DataFrame
         dataframe = pd.DataFrame(list(data))
 
