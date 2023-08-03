@@ -3,7 +3,7 @@ import pickle
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
-from utils import debug as debug_utils
+from utils import debug_utils as debug_utils
 
 logger = debug_utils.logger
 
