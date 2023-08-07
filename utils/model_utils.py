@@ -1,7 +1,7 @@
 
 import joblib
 import os
-import base64
+from bson.binary import Binary
 from sklearn.tree import DecisionTreeClassifier
 from utils import debug_utils as debug_utils
 from utils.data_utils import Data
@@ -32,12 +32,25 @@ class Model:
             return None
         
     # Save the model
-    def save(self, path):
+    def save(self, user_id):
         try:
-            joblib.dump(self.model, path)
+            # Serialize the model to a byte stream
+            serialized_model = joblib.dump(self.model, 'temp.joblib')
+            with open('temp.joblib', 'rb') as f:
+                binary_data = Binary(f.read())
+
+            # Use existing connection method
+            database = self.data.mongodb_connection()
+
+            # Add a 'model' field to the user's document containing the serialized model
+            database.data.update_one({"user_id": user_id}, {"$set": {"model": binary_data}})
+
+            # Remove temp file
+            os.remove('temp.joblib')
         except Exception as e:
             self.logger.error(f"Error occurred while saving: {e}", extra={'color': '91'})
             return None
+
 
     # Load the model from the path if it exists, else define a new model
     def load(self,user_id):
