@@ -8,11 +8,9 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 
-from utils import debug_utils
 
 class Data:
     def __init__(self,user_id) -> None:
-        self.logger = debug_utils.logger
         self.predict = "food"
         self.user_id = user_id
     # MongoDB connection
@@ -22,9 +20,7 @@ class Data:
             database = client["holocheff_db"]
             return database
         except Exception as e:
-            self.logger.error("An error occurred while connecting to MongoDB: " + str(e), extra={'color': '91'})
-            self.logger.warn("The program is going to stop now...", extra={'color': '93'})
-
+            print("An error occurred: " + str(e))
             exit()    
     
     # Import the data from MongoDB and convert it to a pandas DataFrame
@@ -51,8 +47,7 @@ class Data:
             return self     
             
         except Exception as e:
-            self.logger.error("An error occurred while getting the data: " + str(e), extra={'color': '91'})
-            self.logger.warn("The program is going to stop now...", extra={'color': '93'})
+            print("An error occurred: " + str(e))
 
     # Format the data with LabelEncoder
     def format(self):
@@ -76,8 +71,7 @@ class Data:
 
         except Exception as e:
             # Log the error and inform the program is going to stop
-            self.logger.error("An error occurred while formatting the data: " + str(e), extra={'color': '91'})
-            self.logger.warn("The program is going to stop now...", extra={'color': '93'})
+            print("An error occurred: " + str(e))
             exit()
    
     # Get the features from the dataset and drop the predict columns
@@ -87,7 +81,7 @@ class Data:
             labels = np.array(self.dataframe[self.predict])
             return features, labels
         except Exception as e:
-            self.logger.error(f"Error occurred while getting features and labels: {e}", extra={'color': '91'})
+            print("An error occurred: " + str(e))
             return None, None
 
     # Split the data into training and evaluation sets
@@ -95,7 +89,7 @@ class Data:
         try:
             return train_test_split(self.features, self.labels, test_size=test_size)
         except Exception as e:
-            self.logger.error(f"Error occurred while splitting the data: {e}", extra={'color': '91'})
+            print("An error occurred: " + str(e))
             return None, None, None, None
 
     # Insert input data into the database
@@ -104,7 +98,7 @@ class Data:
             # Insert the input data into the database
             self.database["data"].insert_one(input_data)
         except Exception as e:
-            self.logger.error(f"Error occurred while inserting input data: {e}", extra={'color': '91'})
+            print("An error occurred: " + str(e))
 
     # Load the data format from the JSON file
     def load_data_format(self):
@@ -113,32 +107,28 @@ class Data:
                 data_format = json.load(f)
             return data_format
         except Exception as e:
-            self.logger.error(f"Error occurred while loading data format: {e}", extra={'color': '91'})
+            print("An error occurred: " + str(e))
             return None
     
     # Validate the input data format
     def input_validate_format(self, input_data):
         try:
             # Check if the input data matches the data format
-            if input_data.keys() != self.data_format.keys():
-                self.logger.error(f"Input data does not match the data format", extra={'color': '91'})
+            if input_data.keys() != self.data_format.keys():                
                 return False
             
             for key in self.data_format.keys():
                 if isinstance(self.data_format[key], dict):
                     if input_data[key].keys() != self.data_format[key].keys():
-                        self.logger.error(f"Input data does not match the data format", extra={'color': '91'})
+                        
                         return False
                     for sub_key in self.data_format[key].keys():
-                        if not isinstance(input_data[key][sub_key], type(self.data_format[key][sub_key])):
-                            self.logger.error(f"Input data does not match the data format", extra={'color': '91'})
+                        if not isinstance(input_data[key][sub_key], type(self.data_format[key][sub_key])):                            
                             return False
                 else:
-                    if not isinstance(input_data[key], type(self.data_format[key])):
-                        self.logger.error(f"Input data does not match the data format", extra={'color': '91'})
-                        return False
-            
+                    if not isinstance(input_data[key], type(self.data_format[key])):                        
+                        return False            
             return True
         except Exception as e:
-            self.logger.error(f"Error occurred while validating input data format: {e}", extra={'color': '91'})
+            print("An error occurred: " + str(e))
             return False

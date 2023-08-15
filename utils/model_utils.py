@@ -4,13 +4,12 @@ import os
 from bson.binary import Binary
 from io import BytesIO
 from sklearn.tree import DecisionTreeClassifier
-from utils import debug_utils as debug_utils
 from utils.data_utils import Data
 
 class Model:
         
     def __init__(self,data : Data):
-        self.logger = debug_utils.logger
+
         self.data = data        
         self.model = self.load(data.user_id)
 
@@ -20,7 +19,8 @@ class Model:
             model = DecisionTreeClassifier()
             return model
         except Exception as e:
-            self.logger.error(f"Error occurred while defining the model: {e}", extra={'color': '91'})
+            print("An error occurred: " + str(e))
+
             return None
         
     # Train the model
@@ -29,7 +29,8 @@ class Model:
             self.model = self.model.fit(self.data.features_train, self.data.labels_train)
             return self.model
         except Exception as e:
-            self.logger.error(f"Error occurred while training the model: {e}", extra={'color': '91'})
+            print("An error occurred: " + str(e))
+
             return None
         
     # Save the model
@@ -47,7 +48,8 @@ class Model:
             # Add a 'model' field to the user's document containing the serialized model
             database.data.update_one({"user_id": user_id}, {"$set": {"model": binary_data}})
         except Exception as e:
-            self.logger.error(f"Error occurred while saving: {e}", extra={'color': '91'})
+            print("An error occurred: " + str(e))
+
             return None
 
 
@@ -79,9 +81,9 @@ class Model:
             prediction = self.model.predict(features)[0]
             # Get the label from the label encoder
             prediction = self.data.encoder.inverse_transform([prediction])[0]
-            self.logger.info(f"Next meal prediction: {prediction}", extra={'color': '92'})
             return prediction
         except Exception as e:
-            self.logger.error(f"Error occurred: {e}", extra={'color': '91'})
+            print("An error occurred: " + str(e))
+
             return None
 
