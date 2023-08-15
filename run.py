@@ -11,13 +11,14 @@ def Main():
     data = Data('user0').get_meals()
     model = Model(data)
     model_output = model.output()
+    input_hook()
     return model_output
 
 @app.route('/input', methods=['POST'])
 def input_hook():
     # Parse the input data from the request
     input_data = request.json
-
+    print(input_data)
     # TODO: Process the input data
     
     return 'Input received'
