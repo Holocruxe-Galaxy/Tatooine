@@ -3,6 +3,7 @@ import pymongo
 import pandas as pd
 import numpy as np
 import sklearn
+import json
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
@@ -31,18 +32,28 @@ class Data:
         try:
             database = self.mongodb_connection()
             # Get meals data from data collection
-            data = [item['meal'] for item in database["data"].find({}, {"meal": 1, "_id": 0})]
-            # Convert MongoDB data to pandas DataFrame
-            self.dataframe = pd.DataFrame(data)
+            all_data = list(database["data"].find({}))
+            
+            # Extracting meals from all data items
+            meals_list = []
+            for item in all_data:
+                meals_list.extend(item['meals'])
+                        # Convert MongoDB meals data to pandas DataFrame
+            self.dataframe = pd.DataFrame(meals_list)         
+
+            # Set the encoder
             self.encoder = LabelEncoder()
+            # Format the data
             self.format()
-            self.features,self.labels = self.features_labels_split()            
+            # Split the data into features and labels and then into training and evaluation sets 
+            self.features, self.labels = self.features_labels_split()            
             self.features_train, self.features_eval, self.labels_train, self.labels_eval = self.train_test_split()  
             return self     
+            
         except Exception as e:
             self.logger.error("An error occurred while getting the data: " + str(e), extra={'color': '91'})
             self.logger.warn("The program is going to stop now...", extra={'color': '93'})
-         
+
     # Format the data with LabelEncoder
     def format(self):
         try:
@@ -86,3 +97,48 @@ class Data:
         except Exception as e:
             self.logger.error(f"Error occurred while splitting the data: {e}", extra={'color': '91'})
             return None, None, None, None
+
+    # Insert input data into the database
+    def insert_input(self, input_data):
+        try:
+            # Insert the input data into the database
+            self.database["data"].insert_one(input_data)
+        except Exception as e:
+            self.logger.error(f"Error occurred while inserting input data: {e}", extra={'color': '91'})
+
+    # Load the data format from the JSON file
+    def load_data_format(self):
+        try:
+            with open('data_format.json', 'r') as f:
+                data_format = json.load(f)
+            return data_format
+        except Exception as e:
+            self.logger.error(f"Error occurred while loading data format: {e}", extra={'color': '91'})
+            return None
+    
+    # Validate the input data format
+    def input_validate_format(self, input_data):
+        try:
+            # Check if the input data matches the data format
+            if input_data.keys() != self.data_format.keys():
+                self.logger.error(f"Input data does not match the data format", extra={'color': '91'})
+                return False
+            
+            for key in self.data_format.keys():
+                if isinstance(self.data_format[key], dict):
+                    if input_data[key].keys() != self.data_format[key].keys():
+                        self.logger.error(f"Input data does not match the data format", extra={'color': '91'})
+                        return False
+                    for sub_key in self.data_format[key].keys():
+                        if not isinstance(input_data[key][sub_key], type(self.data_format[key][sub_key])):
+                            self.logger.error(f"Input data does not match the data format", extra={'color': '91'})
+                            return False
+                else:
+                    if not isinstance(input_data[key], type(self.data_format[key])):
+                        self.logger.error(f"Input data does not match the data format", extra={'color': '91'})
+                        return False
+            
+            return True
+        except Exception as e:
+            self.logger.error(f"Error occurred while validating input data format: {e}", extra={'color': '91'})
+            return False

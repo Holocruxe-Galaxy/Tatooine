@@ -1,0 +1,17 @@
+{
+    "_id": "string",
+    "meals": [
+      {
+        "date": {
+          "$date": "string"
+        },
+        "food": "string",
+        "weather": "string",
+        "location": "string"
+      }
+    ],
+    "output": {
+      "predicted_meal": "string"
+    },
+    "model": "string"
+  }
